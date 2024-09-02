@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course</title>
+</head>
+<body bgcolor="#DABFDE">
+    <img src="/img/download.png" alt="KBA-Logo" height="50" width="50">
+    <a href="home.html">Home|</a> &nbsp;
+    <a href="learnmore.html">Courses|</a>
+    <a href="contactus.html">Contact Us|</a>
+    <a href="addcourse.html">Add courses|</a>
+    <a href="login.html">Login|</a>
+    <h1 align="center">Add Course</h1>
+    <form action="">
+        <table align="center" cellspacing="20">
+            <tr>
+                <td>Course Name:</td>
+                <td><input type="text"  placeholder="Enter the Course name" required></td>
+            </tr>
+            <tr>
+                <td>Course ID:</td>
+                <td><input type="text" placeholder="Enter Course ID" required></td>
+                </tr>
+            <tr>
+                <td>Course Type:</td>
+                <td>
+                    <select name="course" id="" required>
+                        <option value="select">Select</option>
+                        <option value="course 1" >course 1</option>
+                        <option value="course 2">course 2</option>
+                        <option value="course 3">course 3</option>
+                        <option value="course 4">course 4</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td> <textarea name="" placeholder="Enter your Meassage.." rows="10" cols="60" required></textarea></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td>
+                    <select name="amount" id="" required>
+                        <option value="select">Select</option>
+                        <option value="amount 1" >150000/-</option>
+                        <option value="amount 2">50000/-</option>
+                        <option value="amount 3">250000/-</option>
+                        <option value="amount 4">75000/-</option>
+                    </select>
+                </td>
+            </tr>
+            <tr >
+                <td>Education:</td>
+                <td><input type="checkbox" value="ug" >UG
+                <input type="checkbox" value="PG" >PG
+                <input type="checkbox" value="others">Others</td>
+            </tr>
+            <tr>
+                <td >Gender:</td>
+                    <td>  <input type="radio" name="gender" value="male" >Male
+                        <input type="radio" name="gender" value="female">Female
+                        <input type="radio" name="gender" value="others">Others
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" placeholder="Enetr your email" required></td>
+            </tr>
+            <tr >
+                <td></td>
+                <td ><input type="submit" value="Add Course" name="submit" id="">
+                <input type="submit" value="Reset" name="submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

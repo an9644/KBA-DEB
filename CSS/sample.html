@@ -1,11 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <!-- Inline Style -->
+    <style>
+        h4{
+        font-size: xx-large;
+        font-family:'Times New Roman', Times, serif ;
+        background-color: aquamarine;
+        text-align: right;
+        text-decoration-line: line-through;
+        color: brown;
+            }
+        .nav{
+            list-style-type : none;
+            margin: 0;
+            padding: 0;
+             display: flex;   /*display content in horizontal way                                                                                   */
+        }
+        .nav li{
+            margin-right: 20px;
+        }
+        .nav li a{
+            text-decoration:none ; /*underline maran*/
+            color: blueviolet;
+            /* font-style: italic; */
+        }
+        .div{
+            color: red;
+            text-align: center;
+            text-decoration-line:underline ;
+            background-color: rgb(150, 138, 105);
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>stylling Page</title>
 </head>
 <body>
-    <h1 style="background-color: pink;">hello world</h1>
+    <!-- Embeded Style -->
+    <h1 style=" font-family: 'Times New Roman', Times, serif; 
+                color : rgb(10, 10, 10); 
+                 font-style: italic;
+                  background-color: aqua;
+                text-align: center;
+                text-decoration-line: underline;">Embeded-CSS</h1>
+    <!-- Inline Style -->
+     <h4>Inline-CSS </h4>
+     <nav >
+        <ul class="nav">
+            <li><a href="home">Home</a></li>
+            <li ><a href="about">About</a></li>
+            <li><a href="Service"> Services</a></li>
+            <li ><a href="contact">Contact</a></li>
+        </ul>
+         </nav>
+       <div class="div">   <!-- it wwill divide the page space downwards -->
+            <h2>Welcome to CSS</h2>
+         </div>
+         <div style="  text-decoration: line-through;
+                       color: blue;
+                       text-align: right;
+                       background-color: rgb(123, 190, 190);  "  >
+            <p>Welcome</p>
+         </div>
+         <div style="background-color: aqua;">
+            Hello
+            <p style=" text-decoration:line-through;display:inline; color: rgb(231, 39, 14);">How</p>
+            <p style="color: rgb(231, 39, 14); text-decoration: line-through;">are</p>
+            <p >You?</p>
+         </div>
 </body>
 </html>

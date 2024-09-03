@@ -1,0 +1,13 @@
+.column{
+    height: 800px;
+    width: 33%;  /* the total spacing is 100 for 3 image and cotent its divided by3 so 33%*/
+    border-width: 1px;
+    border-left: 1px rgb(168, 172, 165) solid;
+    float: left;
+    text-align: justify;
+    }
+    .p{
+        margin-bottom: 20px !important;
+    }
+
+

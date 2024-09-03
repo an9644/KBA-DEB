@@ -1,0 +1,55 @@
+h1{
+    padding-top: 40px;
+    font-size: 40px;
+    text-align: center;
+    color: rgb(76, 26, 122);
+}
+.h11{
+    padding-top: -50px;
+    font-size: 40px;
+    text-align: center;
+    color: rgb(169, 100, 190);
+}
+.div1{
+    width: 450px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 150px 650px 100px 650px;
+    text-align: center;
+}
+.div2{
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 75px;
+}
+.div22{
+    padding-top: 2px;
+
+}
+.div3{
+    padding-top: 10px;
+    
+}
+.div3 input {
+    width: 350px;
+    height: 30px;
+}
+.div3 select{
+    width: 350px;
+    height: 30px;
+}
+ .div2{
+    padding-left:50px;
+ }
+ .div4 input{
+     background-color: rgb(253, 150, 253);
+     width: 100px;
+     height: 50px;
+     font-size: larger;
+     color: rgb(89, 37, 105);
+ }
+ .body{
+    background-color: rgb(228, 197, 243);
+ }

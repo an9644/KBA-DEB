@@ -1,3 +1,6 @@
+.body{
+    background-color: rgb(228, 197, 243);
+ }
 h1{
     padding-top: 40px;
     font-size: 40px;
@@ -45,11 +48,61 @@ h1{
  }
  .div4 input{
      background-color: rgb(253, 150, 253);
-     width: 100px;
+     width: 200px;
      height: 50px;
      font-size: larger;
      color: rgb(89, 37, 105);
  }
- .body{
-    background-color: rgb(228, 197, 243);
- }
+     /*Add course  */
+     .container{
+        width: 450px;
+        height: 700px;
+        background-color: rgb(240, 192, 241);
+        border-radius: 10px;
+        font-family: 'Courier New', Courier, monospace;
+        margin: 150px 680px 100px 680px;
+        text-align: center;
+     }
+     .body2{
+        background-color: white;
+     }
+     .container1 li {
+        padding: 1;
+        margin: 2;
+        font-family: 'Courier New', Courier, monospace;
+        list-style-type: none;
+        text-decoration:none ;
+     }
+       
+     .container1 {
+        background-color: rgb(226, 132, 245);
+        display: flex;
+     }
+     .container1 li a{
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+     }
+     .container1 li a:hover{
+        color: black;
+        font-size: 30px;
+         }
+     .nav {
+        font-size: 25px;
+        width: 10000px;
+        height: 10px;
+
+     }
+     .nav li{
+        margin-right: 20px; /*to give spacing between navbar items*/
+     }
+     .image{
+        height: 50px;    
+        width: 50px;        
+     }
+
+     
+        
+
+
+     

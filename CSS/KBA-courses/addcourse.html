@@ -1,73 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="StyleCSS/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Course</title>
 </head>
-<body>
-    <h1 align="center">Add Course</h1>
+<body class="1body">
+    <nav class="nav">
+        <ul class="container1">
+            <img  class="image" src="/imagekba/download.png" alt="">
+            <li><a href="">Home</a></li>
+            <li><a href="">Courses</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Add Course</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class=" container">
+        <h1 class="h1"  align="center">Add Course</h1>
     <form action="">
-        <table align="center" cellspacing="20">
-            <tr>
-                <td>Course Name:</td>
-                <td><input type="text"  placeholder="Enter the Course name" required></td>
-            </tr>
-            <tr>
-                <td>Course ID:</td>
-                <td><input type="text" placeholder="Enter Course ID" required></td>
-                </tr>
-            <tr>
-                <td>Course Type:</td>
-                <td>
-                    <select name="course" id="" required>
-                        <option value="select">Select</option>
-                        <option value="course 1" >course 1</option>
-                        <option value="course 2">course 2</option>
-                        <option value="course 3">course 3</option>
-                        <option value="course 4">course 4</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Description:</td>
-                <td> <textarea name="" placeholder="Enter your Meassage.." rows="10" cols="60" required></textarea></td>
-            </tr>
-            <tr>
-                <td>Price:</td>
-                <td>
-                    <select name="amount" id="" required>
-                        <option value="select">Select</option>
-                        <option value="amount 1" >150000/-</option>
-                        <option value="amount 2">50000/-</option>
-                        <option value="amount 3">250000/-</option>
-                        <option value="amount 4">75000/-</option>
-                    </select>
-                </td>
-            </tr>
-            <tr >
-                <td>Education:</td>
-                <td><input type="checkbox" value="ug" >UG
-                <input type="checkbox" value="PG" >PG
-                <input type="checkbox" value="others">Others</td>
-            </tr>
-            <tr>
-                <td >Gender:</td>
-                    <td>  <input type="radio" name="gender" value="male" >Male
-                        <input type="radio" name="gender" value="female">Female
-                        <input type="radio" name="gender" value="others">Others
-                </td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td><input type="email" placeholder="Enetr your email" required></td>
-            </tr>
-            <tr >
-                <td></td>
-                <td ><input type="submit" value="Add Course" name="submit" id="">
-                <input type="submit" value="Reset" name="submit"></td>
-            </tr>
-        </table>
-    </form>
+            <div class="div2"> Course Name: </div>
+            <div class="div3"><input type="text"  placeholder="Enter the Course name" required></div>
+            <div class="div2">Course ID:</div>
+            <div class="div3"><input type="text" placeholder="Enter Course ID" required></div>
+            <div class="div2">Course Type:</div>
+            <div class="div3"><select name="course" id="" required>
+                <option value="select">Select</option>
+                <option value="course 1" >course 1</option>
+                <option value="course 2">course 2</option>
+                <option value="course 3">course 3</option>
+                <option value="course 4">course 4</option>
+            </select></div>
+            <div class="div2">Description:</div>
+            <div class="div3"><textarea name="" placeholder="Enter your Meassage.." rows="10" cols="40" required></textarea></div>
+            <div class="div2">Price:</div>
+            <div class="div3"><select name="amount" id="" required>
+                <option value="select">Select</option>
+                <option value="amount 1" >150000/-</option>
+                <option value="amount 2">50000/-</option>
+                <option value="amount 3">250000/-</option>
+                <option value="amount 4">75000/-</option>
+            </select></div> <br>
+            <div class="div4"><input type="submit" value="Add Course" name="submit" id="">
+               <!-- <input type="submit" value="Reset" name="submit"> --></div>
+              
+    </form>    </div>
+
 </body>
 </html>

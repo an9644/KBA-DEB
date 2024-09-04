@@ -26,6 +26,8 @@ h1{
     text-align: left;
     padding-top: 5px;
     padding-left: 75px;
+    padding-left:50px;
+
 }
 .div22{
     padding-top: 2px;
@@ -43,9 +45,7 @@ h1{
     width: 350px;
     height: 30px;
 }
- .div2{
-    padding-left:50px;
- }
+ 
  .div4 input{
      background-color: rgb(253, 150, 253);
      width: 200px;
@@ -63,44 +63,195 @@ h1{
         margin: 150px 680px 100px 680px;
         text-align: center;
      }
-     .body2{
+     /* .body2{
         background-color: white;
-     }
+     } */
      .container1 li {
+
         padding: 1;
         margin: 2;
         font-family: 'Courier New', Courier, monospace;
         list-style-type: none;
         text-decoration:none ;
+        padding: 0;
+        margin: 0;
+
      }
        
      .container1 {
-        background-color: rgb(226, 132, 245);
         display: flex;
+        flex-direction: row;
+
      }
      .container1 li a{
         text-decoration: none;
-        margin: 0;
-        padding: 0;
      }
      .container1 li a:hover{
         color: black;
-        font-size: 30px;
+        font-size: 10px;
          }
      .nav {
+        background-color: rgb(226, 132, 245);
         font-size: 25px;
-        width: 10000px;
+        width: 100%;
         height: 10px;
-
+        float: right; /*align items in the end of the conatiner*/
+        display: flex;
+        justify-content: flex-end;
+        position: fixed; /* nav items will stya their forever*/ 
+       top: 0;  /* top postion is 0 */
      }
      .nav li{
         margin-right: 20px; /*to give spacing between navbar items*/
      }
-     .image{
+     .imagelogo img{
         height: 50px;    
         width: 50px;        
-     }
+        margin-right: 20px;
 
+     }
+     /* <--Home page--> */
+     .nav11{
+        text-align: right;
+        float: right; /*align items in the end of the conatiner*/
+        display: flex;
+        justify-content: flex-end;
+        top: 0;
+        background-color: white;    
+        
+     }
+     .nav10{
+        box-shadow: 5px 10px 8px #888888;
+
+     }
+     .nav11 li a{
+            text-decoration-line: none;
+            color: black;
+            list-style-type: none;
+            margin-right: 20px;
+            /* position: fixed; /* nav items will stya their forever*/  */
+     }
+     .home1{
+        text-align: center;
+        color: black;
+        width: 100%;
+     }
+     .home2{
+        text-align: center;
+        color: purple;
+        background-color: rgb(243, 160, 243);
+        width: 100%;
+     }
+     .home2 h1{
+        color: purple;
+     }
+     .home3{
+        border-left: 2px solid black;
+        border: 1px solid;
+        padding: 10px;
+        box-shadow: 5px 10px 8px #888888;
+        height: 500px;
+        width: 30%; /* page divided by 3 parts 100/3 */
+        margin-left: 20px;
+        float: left;
+        text-align: center;
+           }
+     .home3 img{
+            width: 450px;
+            height: 350px;
+            margin-top: 10px;
+            margin-left: 10px;
+     }
+     .homee{
+        display:block ;
+     }
+     .homee1{
+         padding-top: 10px;
+    }
+    .home4 input{
+        background-color: rgb(224, 128, 224);
+        width: 200px;
+        height: 40px;
+        border-radius: 5px;
+        margin-top: 150px;
+        margin-left: 800px;
+
+    }
+    /* Course Page*/
+    .home3{
+               border-left: 2px solid black;
+               border: 1px solid;
+               padding: 10px;
+               box-shadow: 5px 10px 8px #888888;
+               height: 500px;
+               width: 29%; /* page divided by 3 parts 100/3 */
+               margin-left: 20px;
+               float: left;
+               text-align: center;
+    }
+    .cor1{
+      background-color: rgb(240, 188, 240);
+    }
+    /*learn more files css*/
+      .cont1{
+         width: 700px;
+         height: 850px;
+         background-color: rgb(240, 187, 240);
+         margin: 100px 550px 150px 550px;
+         border-radius: 20px;
+      }
+      .cont1 img{
+         padding-top: 20px;
+         margin-left: 30px ;
+      }
+      .cont2 {
+         display: flex;
+         padding-left: 5px;
+         margin-left: 10px;
+         font-size: 20px;
+      }
+      .cont2 p{
+         font-size: larger;
+         margin-left: 20px;
+         font-weight: bold
+      }
+      .cont2 div{
+         display: flex;
+         margin-left: 260px;
+         padding-top: 10px;
+      }
+      .cont2 input{
+         width: 120px;
+         height: 40px;
+         background-color: blueviolet;
+         border-radius: 10px;
+         color: white;
+      }
+      .cont2 h3{
+         margin-top: 10px;
+      }
+      .cont2 a {
+         margin-left: 550px;
+      }
+      .cont3{
+         color: purple;
+         margin-left: 30px;
+      }
+      .cont3 li{
+         margin-left: 40px;
+         color: black;
+      }
+      .cont3 p{
+         justify-content: right;
+         margin-left:20px ;
+         color: black;
+      }
+      .cont4 a{
+         text-decoration: none;
+         color: black;
+         margin: 500px 800px 500px 600px;
+      }
+      
      
         
 

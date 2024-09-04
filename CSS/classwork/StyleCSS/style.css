@@ -8,6 +8,49 @@
     margin-left: 20px; /*margine ninnu left move akan*/
     text-align: center;
     }
+    .div1{
+        border: 2px solid black ; /*border-width,type,color*/
+        width: 300px;
+        height: 400px;
+        }
+    .div2{
+        background-color: aqua;
+        width: 50px;
+        height: 60px;
+        position: static;
+
+    }
+    .div3{
+        background-color: rgb(214, 58, 79);
+        width: 50px;
+        height: 60px;
+        margin-left: 50px;
+        position: relative ;
+        top:40px ;
+        left: 40px;
+    }
+    .div4{
+        background-color: rgb(126, 98, 226);
+        width: 50px;
+        height: 60px;
+        position: fixed;
+        top: 50px;
+        left: 30px;
+    }
+    .div5{
+        background-color: rgb(221, 70, 226);
+        width: 50px;
+        height: 60px;
+        position:absolute ;
+        top: 300px;
+        left:200px ;
+    }
+    h2{
+        position: sticky;
+        top: 20px;
+    }
+    
+    
     
 
 

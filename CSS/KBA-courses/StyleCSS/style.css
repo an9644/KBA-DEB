@@ -79,7 +79,7 @@ h1{
      }
        
      .container1 {
-        display: flex;
+        display: flex; 
         flex-direction: row;
 
      }

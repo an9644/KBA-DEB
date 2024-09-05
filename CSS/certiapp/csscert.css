@@ -1,0 +1,35 @@
+.body1{
+    background-color: rgb(253, 249, 249);
+}
+.certi1 nav li {
+    display: flex;
+       float: right;
+       position: static;
+}
+.certi1 li a{
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+.certi1 li a:hover{
+    background-color: blue;
+    color: white;
+    width: 120px;
+    height: 20px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+
+}
+.certi2 h1{ 
+    text-align:center ;
+}
+.certi2 img{
+    margin-left: 765px;
+    width: 150px;
+    height: 150px;
+}
+.certi2 input{
+        float: right;
+        align-items: center;
+}

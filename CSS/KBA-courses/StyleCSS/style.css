@@ -122,6 +122,7 @@ h1{
      }
      .nav10{
         box-shadow: 5px 10px 8px #888888;
+        width: 100%;
 
      }
      .nav11 li a{
@@ -250,6 +251,43 @@ h1{
          text-decoration: none;
          color: black;
          margin: 500px 800px 500px 600px;
+      }
+      /*Contact us page styllings*/
+      .contus{
+         text-align: center;
+         margin-top: 100px;
+         color: rgb(182, 47, 182);
+      }
+      .contus p{
+         color: black;
+      }
+      .contus h1{
+         margin-top: -30px;
+      }
+      .contus1{
+         text-align: center;
+      }
+      .contus2 {
+         float: left;
+         width: 28%;
+      }
+      .contus2 img{
+         margin-top: 30px;
+         width: 50px;
+         height: 50px;
+         margin-left:370px ;
+         border-radius: 50%;
+      }
+      .contus2 h3{
+         text-align: center;
+         margin-left: 280px;
+      }
+      .contus2 p{
+         margin-left: 300px;
+         text-align: center;
+      }
+      .contus4{
+         color: purple;
       }
       
      

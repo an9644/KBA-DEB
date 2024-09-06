@@ -1,0 +1,34 @@
+        .main-body{
+            background-image: url("/img/bg.webp");
+            width: 100%;
+        }
+        .nav ul{
+            text-decoration: none;
+            list-style: none;
+            
+            display: flex;                                                                                  
+
+        }
+        .nav li{
+            margin:  10px 1px 10px 10px;
+            padding: 10px;
+        }
+        .nav li a{
+            text-decoration: none;
+            color: black;
+        }
+        h1{
+            color:black;
+            margin-top: 350px;
+            font-size: 50px;
+        }
+        .nav li a:hover {
+            background-color: pink;
+             color: green; /* replace pink with the desired color */
+             padding: 10px;
+}
+            /* Login Page  */
+            .log{
+                width: 400px;
+            }
+

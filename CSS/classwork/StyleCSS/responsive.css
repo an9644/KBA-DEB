@@ -1,0 +1,33 @@
+/* meadia change avumbol screen
+     alignment vere avum nallonm other media kanan pattilla 
+     so egne cheyynm apol ath adjust ayikkolum meadia responsible avn
+      */
+     /* 5-08-2024 */
+
+     @media only screen and (max-width:600px){
+        .column{
+            width: 100%;
+            padding: 10px;
+            margin: 10px;
+            height: 300px;
+
+        }        
+        .column p{
+            font-size: 15px;
+        }
+        .column img{
+            width: 150px;
+            height: 150px;
+
+        }
+        .img1{
+            width: 150px;
+            height: 150px;
+
+        }
+        .p1{
+            font-size: 15px;
+
+        }
+
+     }

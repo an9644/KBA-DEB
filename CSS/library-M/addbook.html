@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .nav ul{
+            text-decoration: none;
+            list-style: none;
+            
+            display: flex;                                                                                    */
+
+        }
+        .nav li{
+            margin:  10px 1px 10px 10px;
+            padding: 10px;
+        }
+        .nav li a{
+            text-decoration: none;
+            color: black;
+        }
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+</head>
+<body  background="bg.webp">
+    <nav class="nav" >
+        <ul>
+            <li><a href="home.html"><h2>Home</h2></a></li>
+            <li><a href="login.html"><h2>Login</h2></a></li>
+            <li><a href="addbook.html"><h2>Add Book</h2></a></li>
+            <li><a href="viewbook.html"><h2>View Book</h2></a></li>
+        </ul>
+    </nav>    
+    <form action="">
+        <table align="center" cellspacing="20">
+            <tr>
+                <td>Book Name:</td>
+                <td><input type="text"  placeholder="Enter the Book name" required></td>
+            </tr>
+            <tr>
+                <td>Book ID:</td>
+                <td><input type="text" placeholder="Enter Book ID" required></td>
+                </tr>
+            <tr>
+                <td>Book Type:</td>
+                <td>
+                    <select name="course" id="" required>
+                        <option value="select">Select</option>
+                        <option value="course 1" >Book 1</option>
+                        <option value="course 2">Book 2</option>
+                        <option value="course 3">Book 3</option>
+                        <option value="course 4">Book 4</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td> <textarea name="" placeholder="Enter your Meassage.." rows="10" cols="60" required></textarea></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td>
+                    <select name="amount" id="" required>
+                        <option value="select">Select</option>
+                        <option value="amount 1" >150000/-</option>
+                        <option value="amount 2">50000/-</option>
+                        <option value="amount 3">250000/-</option>
+                        <option value="amount 4">75000/-</option>
+                    </select>
+                </td>
+            </tr>
+           
+            
+                <td></td>
+                <td ><input type="submit" value="Add Book" name="submit" id="">
+                <input type="submit" value="Reset" name="submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

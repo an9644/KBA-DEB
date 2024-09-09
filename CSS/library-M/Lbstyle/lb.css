@@ -1,5 +1,6 @@
         .main-body{
-            background-image: url("/img/bg.webp");
+            background-image: url("./image/bg.webp");
+            /* background-color: #cccccc; */
             width: 100%;
         }
         .nav ul{

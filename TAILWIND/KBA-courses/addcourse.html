@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" " >
+    <div class="bg-fuchsia-200 shadow-xl shadow-black-700 ">
+    <nav class="flex  float-right mr-5">
+         <div class="mt-2 flex justify-end space-x-8  ">
+            <a  href="home.html">Home</a> &nbsp;
+            <a href="learnmore.html">Courses</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="addcourse.html">Add courses</a>
+            <a  href="login.html">Login</a>
+    </div>
+    </nav>
+    <img class="flex flex-left" src="./imagekba/logo.png" alt="KBA-Logo" height="50" width="50">
+    </div>
+
+   
+    <form  class="  flex justify-center">
+        <div class="bg-fuchsia-200 p-12 max-w-screen-sm rounded-xl	mt-12 ml-7 
+        shadow-xl shadow-fuchsia-700 ring-2 ring-fuchsia-300 font-mono	 "  > 
+    
+        <div class="">
+            <p class="pt-2 text-center  text-4xl ">Add Course</p>
+            <div class="mt-4"><label for="">Course Name:</label></div>
+            <div class="mt-2"><input class="h-9 w-full" type="text"  placeholder="Enter the Course name" required></div>
+            <div class="mt-4"><label for="">Course ID:</label></div>
+            <div  class="mt-2"><input class="h-9 w-full" type="text" placeholder="Enter Course ID" required></div>
+            <div class="mt-4"><label for="">Course Type:</label></div>
+            <div class="mt-2 ">
+                 <select class="h-9 w-full" name="course" id="" required>
+                <option value="select">Select</option>
+                <option value="course 1" >course 1</option>
+                <option value="course 2">course 2</option>
+                <option value="course 3">course 3</option>
+                <option value="course 4">course 4</option>
+            </select>
+        </div>
+        <div class="mt-4">Description:</div>
+        <div class="mt-2"> <textarea  name="" placeholder="Short discription about course..." rows="10" cols="40" required></textarea></div>
+        <div class="mt-4">Price:</div>
+        <div class="mt-2" >
+            <select class="h-9 w-full" name="amount" id="" required>
+            <option value="select">Select</option>
+            <option value="amount 1" >150000/-</option>
+            <option value="amount 2">50000/-</option>
+            <option value="amount 3">250000/-</option>
+            <option value="amount 4">75000/-</option>
+        </select></div>
+        <div class="text-center" ><button class="mt-7 pt-2 text-center border-fuchsia-400 bg-fuchsia-400 shadow-md shadow-black-500 
+            rounded-md px-4  h-9">Add Course</button></div>
+        
+            
+            
+            
+           
+    </div>
+    </form>
+    </div>
+    
+   
+</body>
+</html>

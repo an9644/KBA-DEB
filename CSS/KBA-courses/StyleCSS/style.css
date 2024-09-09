@@ -22,7 +22,7 @@ h1{
     margin: 150px 650px 100px 650px;
     text-align: center;
 }
-.div2{
+.div2{ 
     text-align: left;
     padding-top: 5px;
     padding-left: 75px;
@@ -252,7 +252,7 @@ h1{
          color: black;
          margin: 500px 800px 500px 600px;
       }
-      /*Contact us page styllings*/
+ /*Contact us page styllings*/
       .contus{
          text-align: center;
          margin-top: 100px;

@@ -2,45 +2,34 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="Lbstyle/lb.css">
-    <!-- <style>
-        .nav ul{
-            text-decoration: none;
-            list-style: none;
-            
-            display: flex;                                                                                    */
-
-        }
-        .nav li{
-            margin:  10px 1px 10px 10px;
-            padding: 10px;
-        }
-        .nav li a{
-            text-decoration: none;
-            color: black;
-        } -->
-        </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 </head>
-<body  background="/image/leaf.jpeg">
-    <nav class="nav" >
-        <ul>
-            <li><a href="home.html"><h2>Home</h2></a></li>
-            <li><a href="login.html"><h2>Login</h2></a></li>
-            <li><a href="addbook.html"><h2>Add Book</h2></a></li>
-            <li><a href="viewbook.html"><h2>View Book</h2></a></li>
-        </ul>
-    </nav>   
-    <form action="" class="log">
-        <div><h1>Login</h1>  </div>
-        <div>Email:</div>
-        <div><input type="email" required>    </div>
-        <div>Password:</div>
-        <div><input type="password" required></div>
-        <div><input type="submit" value="Login" >   <a href="">Forget Password?</div>
-        <div>Don't have an account? <a href="signup.html">Sign Up</a></div>
-    </form> 
+<body  class="main-body">
+    <div>
+        <nav class="nav" > 
+            <ul>
+                <li><a href="home.html"><h2>Home</h2></a></li>
+                <li><a href="addbook.html"><h2>Add Book</h2></a></li>
+                <li><a href="viewbook.html"><h2>View Book</h2></a></li>
+                <li><a href="login.html"><h2>Login</h2></a></li>
+    
+            </ul>
+        </nav>   
+    </div>
+    <div class="log"> 
+        
+        <h1>Login</h1>
+        <label for="">Email :</label>
+        <div><input type="email" required> <br><br> </div>
+        <label for="">Password : </label>
+        <div class="lg1"><input type="password" required></div>
+        <div class="log1"><button>Login</button>
+        <div class="log2">Don't have an account?  &nbsp;<a href="signup.html">Sign Up</a></div>
+    </div>
+   
+
     
 </body>
 </html>

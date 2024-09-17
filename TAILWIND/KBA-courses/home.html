@@ -7,78 +7,67 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <div>
-<body>
+<body class="bg-blue-200 dark:bg-green-700">
   <!-- navbar -->
   <div class="bg-fuchsia-200 shadow-xl shadow-black-700 ">
     <nav class="flex  float-right mr-5">
          <div class="mt-2 flex justify-end space-x-8  ">
             <a  href="home.html">Home</a> &nbsp;
-            <a href="learnmore.html">Courses</a>
+            <a href="course.html">Courses</a>
             <a href="contactus.html">Contact Us</a>
-            <a href="addcourse.html">Add courses</a>
-            <a  href="login.html">Login</a>
+            <a href="addcourse.html">Add courses</a> 
+            <a  href="login.html">Logout</a>
     </div>
     </nav>
     <img class="flex flex-left" src="./imagekba/logo.png" alt="KBA-Logo" height="50" width="50">
     </div>
-   <!-- <div class="bg-fuchsia-200 ">
-    <div class="w-1/2">
-    <img src="imagekba/logo.png" width="50" height="50" alt="">
-      </div>
-      <div class=" w-1/2  flex justify-end ">
-
-            <a href="">Home</a>
-            <a href="">Courses</a>
-            <a href="">Add Course</a>
-            <a href="">Contact Us</a>
-            <a href="">Login</a>
-       </div>
-
-   </div> -->
+   
    
   
     <!--Heading-->
-    <div class="text-fuchsia-700 font-sams flex flex-col text-center text-2xl mt-4 rounded  shadow-lg shadow-black-900  bg-fuchsia-200 p-8" >
-        <h1 class="font-bold " >Learn Blockchain Technology From Kerala's First Dedicated Facility for Blockchain Education</h1>
-        <h2 class="mt-2 text-lg" >Since 2017</h2>
+    <div class="   dark:bg-fuchsia-600 text-white font-sams flex flex-col text-center text-2xl mt-4 rounded  shadow-lg shadow-black-900  bg-fuchsia-200 p-8" >
+        <h1 class="font-bold text-fuchsia-700 " >Learn Blockchain Technology From Kerala's First Dedicated Facility for Blockchain Education</h1>
+        <h2 class="mt-2 text-lg text-fuchsia-700" >Since 2017</h2>
       </div>
 
       <!-- Top Courses -->
   <div class=" text-fuchsia-700 shadow-xl shadow-black-900 font-sams flex flex-col bg-fuchsia-200 mt-4 text-center justify-center">
-    <h1 class="text-xl text  mt-4" >BROWSE OUR TOP COURSES</h1>
+    <h1 class="text-xl text  mt-4 " >BROWSE OUR TOP COURSES</h1>
     <h2 class=" p-4 font-medium" >Choose the course that's right for your career goals.</h2>
   </div>
 
   <!-- courses -->
-  <div  class="grid grid-cols-3 mt-12 ml-4">
+  <div  class="grid grid-cols-3 mt-12 ml-4  md: grid-cols-2 gap-5">
+    <!-- media seriyakkanm alla media screen vendi adjust cheyynm  -->
 
-          <div class="bg-fuchsia-200 rounded-md shadow-xl shadow-black-900   mx-4 py-4 my-0 text-center item-center justify-center flex flex-col" >
+          <div class="bg-fuchsia-200 rounded-md shadow-xl shadow-black-900   mx-4 py-4  text-center item-center justify-center flex flex-col" >
             <h2 >Certified Blockchain Associate</h2>
-            <img class="ml-44 mt-2" width="200" height="200" src="imagekba/hyperledger.webp" >
+            <img class="ml-52 mt-2 md: w-[170px] h-[120px]  " width="200" height="200" src="imagekba/hyperledger.webp" >
             <p class="mt-4" >A blockchain is a distributed system that exists across a network of nodes within a peer-to-peer framework. Blockchain technology is founded on the principles of decentralisation and consensus that ensure trust within the network. These distributed platforms are fundamental to understanding the new financial system being built with cryptocurrencies and decentralised protocols. </p>
-            <a class="mt-4 text-lg hover:text-white border rounded-lg  bg-fuchsia-400 hover:bg-fuchsia-600  w-44 ml-52" href="#" >Learn More</a>
+            <a  href="" ><button class="mt-4 text-lg text-center hover:text-white border rounded-lg  bg-fuchsia-400 hover:bg-fuchsia-600  w-44" >Learn More</button></a>
            </div>
           <div class="bg-fuchsia-200 rounded-md shadow-xl shadow-black-900   mx-4 py-4 my-0 text-center item-center justify-center flex flex-col" >
             <h2 >Certified Hyperledger Associate</h2>
-            <img class="ml-44 mt-2" width="200" height="200"  src="imagekba/hyperledger.webp" >
+            <img class="ml-52 mt-2 md: w-[170px] h-[120px]" width="200" height="200"  src="./imagekba/hyperledger.webp" >
             <p class="mt-4" >A blockchain is a distributed system that exists across a network of nodes within a peer-to-peer framework. Blockchain technology is founded on the principles of decentralisation and consensus that ensure trust within the network. These distributed platforms are fundamental to understanding the new financial system being built with cryptocurrencies and decentralised protocols. </p>
-            <a class="mt-4 text-lg hover:text-white border rounded-lg  bg-fuchsia-400 hover:bg-fuchsia-600  w-44 ml-52" href="#" >Learn More</a>
+            <a class="mt-4 text-lg hover:text-white border rounded-lg  bg-fuchsia-400 hover:bg-fuchsia-600  w-44 ml-52" href="./Learnmore/lnmhyp.html" >Learn More</a>
         </div>
         <div class="bg-fuchsia-200 rounded-md shadow-xl shadow-black-900  mx-4 py-4 my-0 text-center item-center justify-center flex flex-col" >
           <h2 >Certified Ethereum Associate</h2>
-          <img class="ml-44 mt-2 "  width="200" height="200" src="imagekba/hyperledger.webp" >
+          <img class="ml-52 mt-2 md: w-[170px] h-[120px]" width="200" height="200" src="imagekba/hyperledger.webp" >
           <p class="mt-4" >A blockchain is a distributed system that exists across a network of nodes within a peer-to-peer framework. Blockchain technology is founded on the principles of decentralisation and consensus that ensure trust within the network. These distributed platforms are fundamental to understanding the new financial system being built with cryptocurrencies and decentralised protocols. </p>
           <a class="mt-4 text-lg hover:text-white border rounded-lg  bg-fuchsia-400 hover:bg-fuchsia-600  w-44 ml-52" href="#" >Learn More</a>
       </div>
       <div class="bg-fuchsia-200 rounded-md shadow-xl shadow-black-900    mx-4 py-4 mt-7 text-center item-center justify-center flex flex-col" >
         <h2 >Certified Blockchain Architect</h2>
-        <img class="ml-44 mt-2"  width="200" height="200" src="imagekba/hyperledger.webp" >
+        <img class="ml-52 mt-2 "  width="200" height="200" src="imagekba/hyperledger.webp" >
         <p class="mt-4" >A blockchain is a distributed system that exists across a network of nodes within a peer-to-peer framework. Blockchain technology is founded on the principles of decentralisation and consensus that ensure trust within the network. These distributed platforms are fundamental to understanding the new financial system being built with cryptocurrencies and decentralised protocols. </p>
         <a class="mt-4 text-lg hover:text-white border rounded-lg  bg-fuchsia-400 hover:bg-fuchsia-600  w-44 ml-52" href="#" >Learn More</a>
     </div>
     <div >
     </div>
   </div>
+  
       <!-- footer -->
         <footer>
           <p class="bg-fuchsia-200 text-center text-white mt-4 py-2 mx-auto">&copy; This Page All right reserved</p>

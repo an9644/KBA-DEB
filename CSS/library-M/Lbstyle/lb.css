@@ -16,10 +16,12 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
+                background-size: cover;
+
                 position: relative;
                 height: 100vh;
                 margin: 0;
-                border: 40px solid rgb(240, 158, 158);
+                /* border: 40px solid rgb(240, 158, 158); */
                 box-sizing: border-box;
                 padding: 20px;
         }

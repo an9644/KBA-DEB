@@ -1,0 +1,220 @@
+        /* Add a media query for smaller screens */
+                @media (max-width: 768px) {
+                    .log {
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    }
+                }
+        .main-body{
+            background-image: url('../ image/bg.jpeg');
+            /* background-color: #cccccc; */
+             width: 100%;
+             background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+
+                position: relative;
+                height: 100vh;
+                margin: 0;
+                /* border: 40px solid rgb(240, 158, 158); */
+                box-sizing: border-box;
+                padding: 20px;
+        }
+        .nav{
+            margin-left: 90px;
+        }
+        .nav ul{
+            text-decoration: none;
+            list-style: none;
+            
+            display: flex;                                                                                  
+
+        }
+        .nav li{
+            margin:  10px 1px 10px 10px;
+            padding: 10px;
+        }
+        .nav li a{
+            text-decoration: none;
+            color: black;
+        }
+        h1{
+            color:black;
+            margin-top: 230px;
+            font-size: 50px;
+        }
+        .nav li a:hover {
+            background-color: pink;
+             color: green; /* replace pink with the desired color */
+             padding: 10px;
+}
+            /* Login Page  */
+
+            
+            .log{
+                width: 450px;
+                height: auto;
+                background-color: rgb(247, 199, 204) ;
+                top: 50%;
+                margin-left:33%;
+                position: translate(-50%,-50%);
+                margin-top: -20px;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 5px 8px rgb(243, 144, 144);
+                
+            }
+             .log h1{
+                margin-top: 1px;
+                text-align: center;
+             }
+    .log label{
+        margin-left: 20px;
+        font-size: larger;
+        margin-top: 40px;
+        /* margin-top: 40px; */
+    }
+    .log input{
+        width: 350px;
+        height: 30px;
+        margin-left: 40px;
+        margin-top: 25px;
+    }
+    .log1 button{
+        width: 90px;
+        height: 30px;
+        margin-top: 20px;
+        margin-left: 160px;
+        background-color:rgb(240, 158, 158);
+        border: 1px solid rgb(193, 128, 128);
+        box-shadow: 0 5px 8px rgb(240, 158, 158);
+    }
+    .log1 button:hover{
+        background-color: rgb(252, 120, 120);
+        color: white;
+    }
+    .log2{
+        margin-top: 50px;
+        font-size: larger;
+        /* margin-left: 70px; */
+        text-align: center;
+    }
+    .log2 a{
+        color: black;
+        text-decoration: none;
+
+    }
+    .lg1 label{
+        margin-top: 10px;
+    }
+    /* signup page */
+    
+    .sign{
+
+           margin-left: 20px;
+            font-size: larger;
+            margin-top: -10px; 
+    }
+    .sign1 label{
+        margin-top: -20px;
+
+    }
+    .log select{
+        width: 350px;
+        height: 40px;
+        margin-left: 40px;
+        margin-top: 25px;
+    }
+    /* Add book page */
+    .addbk{
+                width: 450px;
+                height: auto;
+                background-color: rgb(247, 199, 204) ;
+                top: 50%;
+                margin-left:33%;
+                position: translate(-50%,-50%);
+                margin-top: -20px;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 5px 8px rgb(243, 144, 144);
+    }
+    .addbk h1{
+        margin-top: 1px;
+        text-align: center;
+     }
+     .addbk label{
+        margin-top: 10px;
+        margin-left: 20px;
+        font-size: larger;
+     }
+     .addbk input{
+        margin-left: 40px;
+        width: 335px;
+        height: 30px;
+        margin-left: 40px;
+        margin-top: 10px;
+     }
+     .addbk textarea{
+        margin-left: 40px;
+        margin-top: 10px;
+     }
+     .addbk select{
+        margin-left: 40px;
+        width: 345px;
+        height: 30px;
+        margin-left: 40px;
+        margin-top: 10px;
+     }
+     .addbk button{
+        width: 90px;
+        height: 30px;
+        margin-top: 20px;
+        margin-left: 160px;
+        background-color:rgb(240, 158, 158);
+        border: 1px solid rgb(193, 128, 128);
+        box-shadow: 0 5px 8px rgb(240, 158, 158);
+     }
+     .addbk button:hover{
+        background-color: rgb(252, 120, 120);
+        color: white;
+    }
+    /* View Book page stylling */
+    .homee{
+        display:block ;
+     }
+     .home3{
+        border-left: 5px solid;
+        border: 1px solid  rgb(245, 165, 165) ;
+        padding: 5px;
+        box-shadow: 5px 10px 8px #f2b6b6;
+        height: 250px;
+        /* width: 25%; page divided by 3 parts 100/3 */
+        margin-left: 160px;
+        float: left;
+        text-align: center;
+        margin-top: 30px;
+        }
+        .home3 img{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .div3{
+            padding-top: 10px;
+            font-size: larger;
+            
+        }
+        .homee1{
+            padding-top: 10px;
+        }
+
+
+
+
+
+

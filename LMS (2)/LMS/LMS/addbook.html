@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-purple-100">
+    
+    <div class="flex justify-center gap-16 text-2xl  mt-5 text-purple-800 p-4">
+        <a href="home.html">Home</a>
+        <a href="addbook.html">Add Book</a>
+        <a href="viewbooks.html">View Book</a>
+        <a href="login.html">Login</a>
+    </div>
+    <div class="flex justify-center items-center h-screen mt-12 ">
+        <div class="bg-gray-100 p-8 rounded-xl shadow-xl w-[600px]">
+            <p class="text-3xl font-bold mb-4 text-center text-purple-800 ">Add Book</p>
+                <div class="mb-4">
+                    <label class=" text-purple-800 block  text-sm font-bold mb-2" > Title :</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-purple-300  leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Book Title">
+                </div>
+                <div class="mb-4">
+                    <label class="text-purple-800 block  text-sm font-bold mb-2" > Book ID :</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-purple-300  leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Book ID">
+                </div>
+                <div class="mb-4">
+                    <label class="text-purple-800 block  text-sm font-bold mb-2" > Genre :</label>
+                    <select class="text-gray-700 shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="">Select</option>
+                        <option value="">Novel</option>
+                        <option value="">Fantasy</option>
+                        <option value="">Thriller</option>
+                        <option value="">Romance</option>
+                        <option value="">Action Fiction</option>
+                        <option value="">Fairy Tale</option>
+                        <option value="">History</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class=" text-purple-800 block  text-sm font-bold mb-2" for="Description" > Description </label>
+                    <textarea class="text-gray-700 shadow appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none  focus:shadow-outline" placeholder="Short Description...." cols="30" rows="10"></textarea>
+                    <!-- <input  " id="author" type="text" > -->
+                </div>
+                
+                <div class="mb-4">
+                    <label class=" text-purple-800 block  text-sm font-bold mb-2" > Price :</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-purple-300  leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Price">
+                </div>
+                        <button 
+                        class="ml-52 bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:shadow-md transition duration-200"
+                        type="submit" >  Add Book  </button>       
+             </div>
+    </div>
+           
+</body>
+</html>

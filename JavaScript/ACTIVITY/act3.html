@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+
+        <div id="Q1"><h2>Self intro </h2> </div>
+    <script>
+        //Program to print a para about yourself using createElement() , textContent & append child.
+
+        let element=document.createElement("p")
+        element.innerHTML="Hiii. My name is anju b prakash . i come from kollam.";
+        document.getElementById("Q1").appendChild(element);
+
+    </script>
+
+    <ul id="id">   
+        <h2>Unordered List</h2>    
+    <script>
+        //Make an unordered list of cinemas on html page using javascript.
+
+        let mov1=document.createElement("li")
+        mov1.innerHTML="ARM";
+        document.getElementById("id").appendChild(mov1);
+
+        let mov2=document.createElement("li")
+        mov2.innerHTML="Vazha";
+        document.getElementById("id").appendChild(mov2);
+
+        let mov3=document.createElement("li")
+        mov3.innerHTML="Avatar";
+        document.getElementById("id").appendChild(mov3);
+
+        let mov4=document.createElement("li")
+        mov4.innerHTML="Deadpool";
+        document.getElementById("id").appendChild(mov4);    
+
+    </script>
+    </ul>
+    <!-- Create a dropdown for programming language classes offered on html page using javascript. -->
+
+    <h2>Dropdown for Languages</h2>
+    <select id="prgmlg">
+    <script>
+        const Dropdown = document.getElementById("prgmlg")
+
+        const option1 = document.createElement("option");
+        option1.value= "classlist";
+        option1.textContent = "classlist";
+        Dropdown.append(option1);
+
+        const option2 = document.createElement("option");
+        option2.value= "class item";
+        option2.textContent = "classitem";
+        Dropdown.append(option2);
+
+        const option3 = document.createElement("option");
+        option3.value= "classlist";
+        option3.textContent = "classinfo";
+        Dropdown.append(option3);
+
+
+    </script>
+    </select>
+
+    <!-- Create a dropdown containing name of books on the book shop page after List of Book heading. -->
+    
+    <h2>Book Shop</h2>
+    <select id="book">
+    <script>
+        const Drop = document.getElementById("book");
+
+        const book1 = document.createElement("option");
+        book1.value= "Pride and Prejudice";
+        book1.textContent = "Pride and Prejudice";
+        Drop.append(book1);
+
+        const book2 = document.createElement("option");
+        book2.value= "The Sun Also Rises";
+        book2.textContent = "The Sun Also Rises";
+        Drop.append(book2);
+
+        const book3 = document.createElement("option");
+        book3.value= "Wuthering Heights";
+        book3.textContent = "Wuthering Heights";
+        Drop.append(book3);
+
+
+    </script>
+    </select>
+
+    <!-- On the KBA site you created add a radio button showing your experience on KBA(like good, bad, average). -->
+
+
+    <h2>KBA Experience</h2>
+    <div id="exp"></div>
+    <script>
+        let Experience = document.getElementById("exp");
+        const exp1 = document.createElement("radio")
+
+        
+
+    </script>
+    <!-- Create a dropdown for list of cakes and print the value of second option. -->
+
+<h2>Cakes</h2>
+<select id="Cake">
+<script>
+    const dp = document.getElementById("Cake");
+
+    const cake1 = document.createElement("option");
+    cake1.value= "Chocolate cake";
+    cake1.textContent = "Chocolate cake";
+    dp.append(cake1);
+
+    const cake2 = document.createElement("option");
+    cake2.value= " Red Velvet Cakes";
+    cake2.textContent = " Red Velvet Cakes";
+    dp.append(cake2);
+
+    const cake3 = document.createElement("option");
+    cake3.value= "Fruit cake";
+    cake3.textContent = "Fruit cake";
+    dp.append(cake3);
+
+
+</script>
+</select>
+
+<h2>Print In Uppercase</h2>
+<script>
+    let x=Anju;
+    let y=kollam;
+        document.write(`My name is ${fanme}.I live in ${lname}`);
+        document.write(x.toUpperCase(),"<br>");
+        document.write(y.toUpperCase(),"<br>"); 
+
+</script>
+
+
+
+
+
+    
+
+            
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- continues memmory location
+they store same data types
+it hav indexing method using numbers 
+         indexing   0 1 2 3 4      call by using indexing a[3]
+declare like let a=[1,2,3,4,5]; -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array st(19-js)</title>
+</head>
+<body>
+    <script>
+        let a=[1,2,3,4,5,6];
+        document.write("the value in third position is:",a[3],"<br>")
+        document.write("the sum od 3rd and 5th position is :", a[3]+a[5],"<br>")
+        document.write("the array is:","<br>" )
+        for(i=0;i<6;i++){
+            document.write(a[i],"<br>")
+        }
+        document.write("Sum of all digit in the array:",)
+         sum=0;
+        for(i=0;i<a.length;i++){ // array_name lenth
+            sum=sum+a[i];
+            //sum=0+1 sum=1+2 sum=2+3
+        }
+        document.write(sum+ "<br>");
+
+
+        document.write("Adding 2 to every individual elements:")
+        for(let i=0;i<a.length;i++){
+            a[i]=a[i]+2;
+        }
+        document.write(a)
+
+
+    </script>
+
+    
+</body>
+</html>

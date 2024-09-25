@@ -121,17 +121,18 @@ let fahrenheit = (celsius * 9/5) + 32;
 document.write(`<br>${celsius} C is equal to ${fahrenheit} F`);
 
 // Program to find simple interest & compound interest
-
+//simple
 let perimeter=1000;
 let rate= 0.05;
 let time=2;
-simpleInterest= perimeter*rate*time/100
+simpleInterest= perimeter*rate*time
 document.write(`<br>Simple Interest is: ${simpleInterest}`);
-
+//compound
 let p2=100
 let r2=10
 let t2=2
-let amount=p2*(1+r2/100)^t2
+let amount = p2 * Math.pow((1 + r2/100), time2);
+// let amount=p2*(1+r2/100)^t2
 let ci=amount-p2
 document.write(`<br>Compund Intersest is: ${ci}`);
 

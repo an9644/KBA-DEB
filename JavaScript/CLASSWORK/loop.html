@@ -3,11 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>25-sep-24(19-js)</title>
 </head>
 <body>
     <script>
+        // document.write("Welcome","<br>")
+        // document.write("Welcome","<br>")
+        // document.write("Welcome","<br>")
+        // document.write("Welcome","<br>")
+        // document.write("Welcome","<br>")
+        // document.write("Welcome","<br>")
+        // document.write("Welcome","<br>")
+        // document.write("Welcome","<br>")
+        // document.write("Welcome","<br>")
+        // document.write("Welcome",)
+
+        // //For loop 
+        // for( initialization;condition ;increment/decrement){
+        //     stmt;
+        // }
+        // //while loop (first check condition then execute)
+        // initializing veriable
+        // while(condition ){
+        //     stmt;
+        //     increment/decrement
+        // }
+        // // do while( atleast one timethey execute the statement then check the condition )
+        // initializing veriable
+        // do{
+        //     stmt;
+        //     increment/decrement
+        // }
+        // while(condition);   
         
+        for(let i=0;i<10;i++){
+            document.write("javascript","<br>")
+        }
+        //Even numbers
+        // first 10 natural numbers
+        for(let j=1;j<=10;j++){
+            document.write(j,"<br>")
+        }
+        for(let x=0;x<=10;x+=2){
+            document.write(x,"<br>")
+        }
+        // another way
+        document.write("first 10 even numberes")
+        let n=0;
+        for(let x=0;x<10;x++){
+            n=n+2;
+            document.write(n,"<br>")
+        }
+        document.write("Sum of 10 natural numbers","<br>")
+        let sum=0;
+        for( a=1;a<=10;a++){
+        sum+=a; //sum=sum+i;
+        }
+        // document.write("Sum=",sum)
+
+        document.write("Reverse of a number","<br>")
+        // let a=123
+        // for( a=123;a>=0;a-- ){
+        //     a1+=a
+        //     document.write("Number:",a)
+        //     document.write("reversed num:",a1)
+        // }
+
+
+        let num =123;
+        let rev=0;
+        for(;num>0;num=Math.floor(num/10)){
+            let n=num%10;
+            rev=(rev*10)+n;
+        }
+        document.write("Reversed of number is"+ rev)
+
+
+
     </script>
+       
+
+
 </body>
 </html>

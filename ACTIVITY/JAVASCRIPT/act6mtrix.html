@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix</title>
+</head>
+<body>
+    <!-- Read two matrix and check whether they are same or not-->
+    <script>
+        a=[[1,2,3],[4,5,6],[0,1,2]]
+        b=[[6,5,4],[2,3,4],[4,7,1]]
+        document.write(`First matrix: ${a}`)
+        document.write(`<br> second matrix: ${b}`)
+        sum=[[],[],[]]
+        // sum=a.length+b.length
+        for(i=0;i<a.length;i++){
+            for(j=0;j<b.length;j++){
+                sum+=a[i][j]+ b[i][j]+ " "
+                document.write(`<br> Sum:${sum}`)
+
+            }
+        }
+    </script>
+    
+</body>
+</html>

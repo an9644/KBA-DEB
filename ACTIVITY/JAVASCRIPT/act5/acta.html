@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act a</title>
+</head>
+<body>
+    <script>       
+
+        // List of films a
+            let a = [
+            "The Godfather",
+            "The Dark Knight",
+            "ARM",
+            "Vazha",
+            "avatar",
+            "i saw the devil",
+            "Forrest Gump" ];
+
+            let b = "The Dark Knight";
+
+            let Position=a.indexOf(b)+1;
+
+            document.write(`Favorite movie: ${b}`);
+            document.write(`<br>Position: ${Position}`);
+
+        //b
+
+            let k=a.push("Thuruppugulan")
+            document.write("<br>","Movies after push :" ,a)
+
+        //c
+            let l=a.pop()    
+            document.write("<br>"," Movies after pop :" ,a)
+
+        //d
+           let m=a.splice(4, 1)
+            document.write("<br>"," removing least fav mv :" ,a)
+        //e
+            let n=a.slice(3, 6);
+            document.write("<br>"," New list (3rd to 6th) :" ,n)
+
+        //f
+            let index=0
+            let mv="ARM"
+            
+            for(i=0;i<a.length;i++){
+                if(a[i]==mv){
+            document.write(" <br>ARM is founded.The index is ",i)
+            break;
+        }
+            }
+        
+
+            //2. url
+            
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

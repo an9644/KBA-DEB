@@ -12,15 +12,23 @@
         b=[[6,5,4],[2,3,4],[4,7,1]]
         document.write(`First matrix: ${a}`)
         document.write(`<br> second matrix: ${b}`)
-        sum=[[],[],[]]
-        // sum=a.length+b.length
-        for(i=0;i<a.length;i++){
-            for(j=0;j<b.length;j++){
-                sum+=a[i][j]+ b[i][j]+ " "
-                document.write(`<br> Sum:${sum}`)
+        let same =true;
 
+        if(a.length !==b.length || a[0].length !==b[0].length){
+            same=false;
+        }
+        else{
+            for(let i=0;i<a.length;i++){
+                for(let j=0;j< a[i].length;j++){
+                    if(a[i][j] !==b[i][j]){
+                        same=false;
+                        break;
+                    }
+                }
+                if(!same)break;
             }
         }
+        document.write(same?"<br>the matrices are the same":"the matrices are different")
     </script>
     
 </body>

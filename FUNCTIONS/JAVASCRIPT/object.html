@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-object introduction</title>
+</head>
+<body>
+    <h2>js-object introduction</h2>
+    <p>open your browser to see the output</p>
+<script>
+    // object in example 
+    //obeject have so much key values /attributes
+    let person={ // person is a obeject 
+        name: `bob`,
+        age: 20,
+        city: `tvm`, // these are the keys it has 3 keys values
+    greet:function() {// using function
+        console.log(`Hello `+ this.name + " " + this.age +  " " + this.city); //this also a key word this=person (aa scoppil ulla object value ah nu return cheyyunne)
+        //globally call cheyyam 
+    }
+    }
+    console.log(person.name);
+    console.log(person.age);
+    console.log(person.city);// to call uhave to mension the object name also
+    person.greet();
+</script>
+
+</body>
+</html>

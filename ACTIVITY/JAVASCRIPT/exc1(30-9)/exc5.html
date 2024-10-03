@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc-5</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="">Enter First number:</label>
+        <input type="number" id="first"><br>
+        <label for="">Enter second number:</label>
+        <input type="number" id="second"><br>
+        <button onclick="performcalculation()" >submit</button>
+
+        <script>
+            sum=0
+            function performcalculation(){
+                first= document.getElementById('first').value
+                second= document.getAnimations('second').value
+                 sum= first + second
+
+                 if(sum%2==0){
+                    document.write("The sum is even..")
+                 }else{
+                    document.write("The sum is odd..")
+                 }
+
+                 performcalculation();
+            }
+        </script>
+    </form>
+    
+</body>
+</html>

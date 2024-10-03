@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXC-4</title>
+</head>
+<body>
+    
+    <script>
+        const taskInput = document.getElementById('task-input');
+        const addTaskBtn = document.getElementById('add-task-btn');
+        const taskList = document.getElementById('task-list');
+
+        let tasks = [];
+        let editingTaskId = null;
+
+        addTaskBtn.addEventListener('click', addTask);
+
+        function addTask() {
+            const taskText = taskInput.value.trim();
+            if (taskText) {
+                const task = {
+                    id: Date.now(),
+                    text: taskText,
+                };
+                tasks.push(task);
+                renderTaskList();
+                taskInput.value = '';
+            }
+        }
+
+        function renderTaskList() {
+            taskList.innerHTML = '';
+            tasks.forEach((task) => {
+                const taskHtml = `
+                    <li class="task" data-task-id="${task.id}">
+                        ${editingTaskId === task.id ? `
+                            <input type="text" value="${task.text}" id="edit-task-input-${task.id}">
+                            <button class="save-btn" onclick="saveTask(${task.id})">Save</button>
+                        ` : `
+                            <span>${task.text}</span>
+                            <button class="edit-btn" onclick="editTask(${task.id})">Edit</button>
+                            <button class="remove-btn" onclick="removeTask(${task.id})">Remove</button>
+                        `}
+                    </li>
+                `;
+                taskList.insertAdjacentHTML('beforeend', taskHtml);
+            });
+        }
+
+        function removeTask(taskId) {
+            tasks = tasks.filter((task) => task.id !== taskId);
+            renderTaskList();
+        }
+
+        function editTask(taskId) {
+            editingTaskId = taskId;
+            renderTaskList();
+        }
+
+        function saveTask(taskId) {
+            const editedTaskInput = document.getElementById(`edit-task-input-${taskId}`);
+            const editedTaskText = editedTaskInput.value.trim();
+            if (editedTaskText) {
+                const task = tasks.find((task) => task.id === taskId);
+                task.text = editedTaskText;
+                editingTaskId = null;
+                renderTaskList();
+            }
+        }
+    </script>
+    
+</body>
+</html>

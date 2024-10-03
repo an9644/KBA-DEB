@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXC-1</title>
+</head>
+<body>
+    <!-- Define an arrow function greetLater that takes a parameter name and logs 
+     "Hello, [name]" after 2 seconds. Use setTimeout to delay the log. The arrow
+      function should use the global this context. Explain why the this context
+       behaves the way it does in an arrow function.-->
+
+       <SCript>
+
+        person={
+        name:"anju",
+        greatlater: function(){
+            setTimeout(()=>{
+                globalThis.document.write(`Hello ${globalThis.person.name}`)
+            },2000)
+
+        }}
+        person.greatlater();
+       </SCript>
+    
+</body>
+</html>

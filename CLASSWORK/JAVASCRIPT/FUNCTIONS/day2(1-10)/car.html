@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object using 'new ' keyword</title>
+</head>
+<body>
+    <h1>Object recap</h1>
+    <p id="cardetails"></p>
+    <p id="originalperson"></p>
+    <p id="modifiedperson"></p>
+
+    <script>
+        // const car=new Object()
+        // car.brand ="Toyota";
+        // car.model ="Qualis";
+        // car .getdetails =function(){
+        //     return `Brand: ${this.brand}, Model: ${this.model}`;
+        // }
+        // document.getElementById("cardetails").textContent = car.getdetails();
+
+
+        const person={
+            firstname:"john",
+            lastname:"wick",
+            age:30,
+            eyecolor:"blue"
+        }
+        //display original object
+        document.getElementById("originalperson").innerHTML=
+        `Original Person object:${JSON.stringify(person)}`;
+        //create a copy of object person
+            const x=person;
+            //change value of x
+            x.age=10;
+        //display Modified object
+        document.getElementById("modifiedperson").innerHTML=
+        `Modified Person object:${JSON.stringify(person)}`;
+
+    </script>
+    
+</body>
+</html>

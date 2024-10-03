@@ -23,45 +23,67 @@
             let Position=a.indexOf(b)+1;
 
             document.write(`Favorite movie: ${b}`);
+            document.write("<br>")
             document.write(`<br>Position: ${Position}`);
+            document.write("<br>")
+
 
         //b
 
             let k=a.push("Thuruppugulan")
             document.write("<br>","Movies after push :" ,a)
+            document.write("<br>")
+
 
         //c
             let l=a.pop()    
             document.write("<br>"," Movies after pop :" ,a)
+            document.write("<br>")
+
 
         //d
            let m=a.splice(4, 1)
             document.write("<br>"," removing least fav mv :" ,a)
+            document.write("<br>")
+
         //e
             let n=a.slice(3, 6);
             document.write("<br>"," New list (3rd to 6th) :" ,n)
+            document.write("<br>")
+
 
         //f
             let index=0
             let mv="ARM"
+
             
             for(i=0;i<a.length;i++){
                 if(a[i]==mv){
             document.write(" <br>ARM is founded.The index is ",i)
             break;
+            document.write("<br>")
+
         }
             }
         
 
             //2. url
-            
+          
+                    document.write(" <br>Get the website name from a particular url")           
+                     document.write("<br>")
 
+                    // Example URL
+                let url = "https://www.Helloworld.com/page?param=value";
 
+                let urlObjt = new URL(url);
 
+                // Get the hostname (website name)
+                let websiteName = urlObjt.hostname;
 
+                document.write("<br>Website name: ", websiteName);
+               
 
-
-    </script>
+                    </script>
     
 </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check the scop of "this" keyword</title>
+</head>
+<body>
+    <h1>call method i function </h1>
+    <p>check the console for output</p>
+
+    <script>
+        function greet(greeting){
+            console.log(greeting + `,` + this.name) 
+        }
+
+        let person= {
+            name:`anju`,
+            age:21
+        }
+        greet.call(person,`hello`)
+
+
+        const person1={
+                fullname: function(city,contry){
+                    console.log(this.firstname + " " +this.lastname+ " " +city+ " "+contry )
+                }            
+        }
+
+        const person2={
+            firstname:"John",
+            lastname:"Wick"
+        }
+        const person3={
+            firstname:"Alice",
+            lastname:"Smith"
+        }
+        const person4={
+            firstname:"Jason",
+            lastname:"George"
+        }
+        const boundfunction = person1.fullname.bind(person4,"Kingston","Jamaica")
+        person1.fullname.call(person2,"New York","USA");
+        person1.fullname.apply(person3,["london","Uk"]);
+        boundfunction();
+
+
+    </script>
+    
+</body>
+</html>

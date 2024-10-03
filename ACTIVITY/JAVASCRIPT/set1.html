@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS</title>
+    <title>Js activity set1</title>
 </head>
 <body>
 
         <div id="Q1"><h2>Self intro </h2> </div>
+        <!-- Program to print a para about yourself using createElement() , textContent & append child.    -->
     <script>
-        //Program to print a para about yourself using createElement() , textContent & append child.
-
+        
         let element=document.createElement("p")
         element.innerHTML="Hiii. My name is anju b prakash . i come from kollam.";
         document.getElementById("Q1").appendChild(element);
@@ -43,41 +43,29 @@
     <!-- Create a dropdown for programming language classes offered on html page using javascript. -->
 
     <h2>Dropdown for Languages</h2>
-    <select id="prgmlg">
-    <script>
-        const Dropdown = document.getElementById("prgmlg")
+    <div id="prgmlg">
+        <script>
 
-        const option1 = document.createElement("option");
-        option1.value= "select";
-        option1.textContent = "select";
-        Dropdown.append(option1); const option1 = document.createElement("option");
-
-        option1.value= "javascript";
-        option1.textContent = "javascript";
-        Dropdown.append(option1);
-
-        const option1 = document.createElement("option");
-        option1.value= "C++";
-        option1.textContent = "C++";
-        Dropdown.append(option1);
-
-        const option2 = document.createElement("option");
-        option2.value= "python";
-        option2.textContent = "python";
-        Dropdown.append(option2);
-
-        const option3 = document.createElement("option");
-        option3.value= "html";
-        option3.textContent = "html";
-        Dropdown.append(option3);
-
-
-    </script>
-    </select>
+            let selectInp = document.createElement("select")
+            let option1 = document.createElement("option")
+    
+            option1.innerHTML = "Python"
+            selectInp.appendChild(option1)
+    
+            let option2 = document.createElement("option")
+            option2.innerHTML = "HTML"
+            selectInp.appendChild(option2)
+    
+            let option3 = document.createElement("option")
+            option3.innerHTML = "Java"
+            selectInp.appendChild(option3)
+            document.getElementById("prgmlg").appendChild(selectInp)
+        </script>
+    </div>
 
     <!-- Create a dropdown containing name of books on the book shop page after List of Book heading. -->
     
-    <h2>Book Shop</h2>
+    <h2>Book Shop (drop down)</h2>
     <select id="book">
     <script>
         const Drop = document.getElementById("book");
@@ -104,9 +92,9 @@
     <!-- On the KBA site you created add a radio button showing your experience on KBA(like good, bad, average). -->
 
 
-    <div  id="radio">
+
         <h3>On the KBA site you created add a radio button showing your experience on KBA(like good, bad, average)</h3>
-    </div>
+        <div  id="radio">  </div>
     <script>
         let  kbaradio= document.getElementById("radio");
         
@@ -130,7 +118,7 @@
      </script>
     <!-- Create a dropdown for list of cakes and print the value of second option. -->
 
-<h2>Cakes</h2>
+<h2> deopdown for Cakes</h2>
 <select id="Cake"></select>
 
 <script>
@@ -156,15 +144,16 @@
 
 </script>
 
-
+<h3> Print your full name storing fname & lname. Print in Uppercase</h3>
 <!-- Print your full name storing fname & lname. Print in Uppercase. -->
     <script>
-        let name="Anju B Prakash";
-        document.write("<br><br><br>",name.toUpperCase());
+        let fname1="Anju ";
+        let lname1="B Prakash"
+        document.write("<br><br><br>",fname1.toUpperCase() , lname1.toUpperCase());
     </script>
 
 <!-- “You can study anything if you have a will to do it”.Take the substrings “You can study”, “you”,”will”,”do it” and combine as a sentence. -->
-
+    <h3>“You can study anything if you have a will to do it”.Take the substrings “You can study”, “you”,”will”,”do it” and combine as a sentence.</h3>
     <script>
         let sentence1="You can study anything if you have a will to do it"
         //using slice function
@@ -173,19 +162,23 @@
     </script>
 
 <!-- “MongoDB is a decentralised distributed ledger.MongoDB can eliminate centralisation.” Replace MongoDB with Blockchain. -->
+ <h3> “MongoDB is a decentralised distributed ledger.MongoDB can eliminate centralisation.” Replace MongoDB with Blockchain.</h3>
     <script>
         let originaltext="MongoDB is a decentralised distributed ledger . MongoDB can eliminate centralisation.";
-        let newtext=originaltext.replace(/MongoDB/g,"Blockchain"); // /g is a flag used to perform global serach.this means tht the regular exp will replace all the occurrance of  a match in str.
-        document.write(newtext,"<br>")
+        document.write(originaltext)
+        let result1=originaltext.replaceAll("MongoDB", "Blockchain"); 
+        document.write("<br>",result1)
     </script>
 <!-- Print the string “MongoDB is a decentralised distributed ledger” using substring/substr. -->
+ <h3>Print the string “MongoDB is a decentralised distributed ledger” using substring/substr.</h3>
 <script>
     let text="MongoDB is a decentralised distributed ledger";
-    document.write(text.substring(0,45),"<br>");
+    document.write("<br>",text.substring(0,45),"<br>");
     document.write(text.substr(0,45),"<br>");
 </script>
 
 <!-- Compare “Hello World” & “hEllO World” and display the result & its type. -->
+ <h3> Compare “Hello World” & “hEllO World” and display the result & its type.</h3>
 <script>
 const str1 = "Hello World";
 const str2 = "hEllO World";
@@ -200,6 +193,7 @@ document.write("<br>type is:",type2)
 </script>
 
 <!-- Print this statement “ I am _ yrs of old and my brother is 10 yrs older to me. He is now __ years old.” -->
+ <h3>Print this statement “ I am _ yrs of old and my brother is 10 yrs older to me. He is now __ years old.”</h3>
 <script>
     const myAge = 20;
     const brotherAge = myAge + 10;
@@ -210,6 +204,7 @@ document.write("<br>type is:",type2)
 </script>
 
 <!-- Consider this statement “ My name is ___.(declaring fname & lastname in uppercase). I live in ___(uppercase). -->
+ <h3>Consider this statement “ My name is ___.(declaring fname & lastname in uppercase). I live in ___(uppercase).</h3>
 <script>
     const fname = "Anju B".toUpperCase();
     const lastname = "Prakash".toUpperCase();
@@ -221,6 +216,7 @@ document.write("<br>type is:",type2)
 </script>
 
 <!-- Consider these two statements “I like to play video games.” “I don’t like Hide & seek”. Change 'like' to 'don't like'. -->
+ <h3>Consider these two statements “I like to play video games.” “I don’t like Hide & seek”. Change 'like' to 'don't like'.</h3>
 
 <script>
     let statement1 = "I like to play video games.";
@@ -234,23 +230,22 @@ document.write("<br>",statement2);
 </script>
 <br>
 <!-- Write a JavaScript program to compute the sum of the two given integers. If the sum is in the range 50..80 return 65 otherwise return 80 (using ternary operator).-->
+    <h3>Write a JavaScript program to compute the sum of the two given integers. If the sum is in the range 50..80 return 65 otherwise return 80 (using ternary operator</h3>
     <script>
         const a=10;
         const b=53;
-        // const sum=0
         sum=a+b
-        document.write("<br>",`Sum:${sum}`)
-        // let sum=(50>80)?65:80;
-        let sum=(50<sum)?(80>sum)?80:65:(50>sum)?65:80;
-        document.write(sum)
+        sum1=(sum >= 50 && sum <= 80)? 65 :80;
+        document.write("<br>",sum1)
     </script>
 <br>
     <!-- Program to find whether the person is eligible for voting using ternary operator-->
+     <h3>Program to find whether the person is eligible for voting using ternary operator-</h3>
 
     <script>
-         a =21;
-        let vote = a >= 18? "The Person is eligible for voting":"The Person is not eligible for voting";
-        document.write("<br>"+ vote);
+        let age =21;
+        let vote = (age >= 18)? "The Person is eligible for voting":"The Person is not eligible for voting";
+        document.write("<br>", vote);
         
 
     </script>

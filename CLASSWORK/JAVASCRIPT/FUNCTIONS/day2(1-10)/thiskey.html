@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check the scop of "this" keyword  </title>
+
+</head>
+<body>
+    <h1>check the scop of "this" keyword </h1>
+    <p>check the console for output</p>
+    <button onclick="showalert()">Show alert</button>
+    
+    <script>
+        console.log(this);//global window object
+
+            function showthis(){
+                console.log(this)
+            }
+
+            showthis()// window object
+
+            let person={
+                name:'anju',
+                greet: function(){
+                    console.log('hello '+ this.name)
+                }
+            };
+
+            person.greet() // o/p hello anju
+
+            let  arrowGreet=()=>{
+                console.log(`Arrow function this context` ,this)
+            }
+            arrowGreet()//o/p window object
+
+            function showalert(){ 
+                window.alert("Hello from window object")
+            }
+
+
+             // immediatly invoked function expression
+             //function declare cheyythappol thanne function imm call cheyyunnu
+             (function(){
+                console.log(`function is immediately executed`)
+             })()
+
+            </script>
+    
+</body>
+</html>

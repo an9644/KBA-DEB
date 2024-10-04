@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task manager with local storage</title>
+    <style>
+        ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        li{
+            margin: 5px 0;
+        }
+        button{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trying out localstorage</h1>
+    <input type="text" id="taskinput" placeholder="Enter your task">
+    <button onclick="addtask()">Add task</button>
+    <ul id="tasklist"></ul>
+    <script>
+        let tasks=[]
+        //function to add a task
+        function addtask(){
+            const taskinput= document.getElementById("taskinput")
+            const taskvalue= taskinput.value.trim()
+
+            if(taskvalue !==' '){
+                saveTaskoToLocalStorage(taskvalue)
+                createtaskelement(taskvalue)
+                taskinput.value ='' //clear input
+            }
+        }
+        //functionto save a task to localstorage
+        function saveTaskoToLocalStorage(task){
+        tasks =gettaskfromlocalstorage()
+        tasks.push(task)
+        localStorage.setitem('tasks,', JSON.stringify(tasks))
+        }
+
+        //function to get all task from local storage
+        function gettaskfromlocalstorage(){
+            const tasks=localStorage.getitem('tasks')
+            return tasks ? JSON.parse(tasks):[];
+        }
+        // function to create a task element
+        function createtaskelement(){
+            const tasklist=document.getElementById('tasklist')
+            const li = document.createElement('li')
+            li.textContent= task;
+            //add remove button
+            const removebutton = document.createElement('button')
+            removebutton.onclick=function(){
+                removetask(task)
+            tasklist.appendChild(li);
+
+            }}
+            //function to remove a task from local storage
+            function removetask(tasktoremove){
+                let task=gettaskfromlocalstorage()
+                tasks =tasks.filter(task=>task !==tasttoremove)
+                localStorage.setItem('task',JSON.stringify(tasks))
+            }
+            //load tasks when page loads of refreshes
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -11,18 +11,18 @@
       function should use the global this context. Explain why the this context
        behaves the way it does in an arrow function.-->
 
-       <SCript>
+       <script>
 
         person={
         name:"anju",
         greatlater: function(){
             setTimeout(()=>{
-                globalThis.document.write(`Hello ${globalThis.person.name}`)
+                document.write(`Hello ${this.name}`)
             },2000)
 
         }}
         person.greatlater();
-       </SCript>
+       </script>
     
 </body>
 </html>

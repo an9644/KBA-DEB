@@ -34,14 +34,14 @@ const person3 = {
 };
 
 // Using the call method to invoke printFullName for person2
-printFullName.call(person2); // Full Name: Jane Smith
+printFullName.call(person2);
 
 // Using the apply method to invoke printFullName for person3
-printFullName.apply(person3); // Full Name: Alice Johnson
+printFullName.apply(person3); 
 
 // Using the bind method to create a new function for person1 and invoking it
 const boundFunction = printFullName.bind(person1);
-boundFunction(); // Full Name: John Doe
+boundFunction(); 
 
     </script>
     

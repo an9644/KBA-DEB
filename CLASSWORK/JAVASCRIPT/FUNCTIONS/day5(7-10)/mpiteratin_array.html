@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Map Iteration array</title>
+<script>
+    
+    function basicmapoperations(){
+        let map =new Map()
+        
+        map.set("name",["Alice","Bob","John"])
+        map.set("age",[30,20,15])
+        let names=map.get('name')
+        document.getElementById('getname').innerHTML='Names: '+names.join(',')
+        document.getElementById('getage').innerHTML-'Age: '+ map.get('age')
+        //array.isarray //boolean is array or not
+        let output=''
+        map.forEach((value,key)=>{
+            if(Array.isArray(value)){
+                output += key + '=' + value.join(' ,')+'<br>'
+            } else{
+                output += key +'='+ value +'<br>'
+            }
+        });
+        document.getElementById('iterationourput').innerHTML=output;
+    }
+
+
+    </script>
+</head>
+<body>
+
+    <h1>Map Operation</h1>
+    <h2>Map Iteration</h2>
+    <button onclick="basicmapoperations()">Run Map Methods</button>
+    <div id="getname"></div>
+    <div id="getage"></div>
+    <div id="iterationourput"></div>
+
+    
+</body>
+</html>

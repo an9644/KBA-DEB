@@ -16,12 +16,12 @@
 <body>
     <h1>Advance task manager with priorities</h1>
     <label for="task">Enter the task:</label>
-    <input type="text" id="tasks"> <br>
+    <input type="text" id="task"> <br>
     <label for="priority">Enter the Priority(1-high,2-medium,3-low)</label>
-    <input type="text" id="priorities"><br>
+    <input type="number" id="priority" min="1" max="3"><br>
     <button onclick="addtask()">Add task</button>
     <ul id="tasklist"></ul>
     <script src="task.js"></script>
           
 </body>
-</html>
+</html>  

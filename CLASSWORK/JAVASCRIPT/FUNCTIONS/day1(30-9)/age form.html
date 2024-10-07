@@ -18,7 +18,7 @@
             const age =document.getElementById(`ageInput`)  .value;
             const messageElement = document.getElementById(`message`);
 
-            if(age){
+            if(age>0){
                 messageElement.textContent=`you are ${age} years old`;
             }else {
                 messageElement.textContent=`Please enter the correct age `;

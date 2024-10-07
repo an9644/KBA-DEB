@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Map Methods</title>
+    <script>
+        //they are object 
+        //support every datatype (boolean inter etc
+        //map has order imp
+        //key value pair  und
+        //in-buit methods used to maipulate the keyvalue pair 
+        // set 
+            //set is used to set elemet
+        //get
+            //get is used to get elemt value that is stored
+
+           // keyvalue pair
+    // map.set(key , value) this how it work
+    //  output += key + '=' + value + '<br>'
+        function demonstratemapmethods(){
+            const mymap= new Map();
+            //setting values 
+                    //set is used to set elemet
+            mymap.set("name","Alice"); //string
+            mymap.set(10,"Number Key"); //integer
+            mymap.set(true,"Boolean Key"); //Boolean
+                    //get is used to get elemt value that is stored
+            document.getElementById('getname').innerHTML='Name :'+ mymap.get("name")
+            //checking is a value is exist
+            document.getElementById('haskey').innerHTML='Has a key 10:'+ mymap.has(10)
+            // to remove a key value pair
+            mymap.delete("name")// delete name
+            document.getElementById('afterdelete').innerHTML='After deleteing name'+ mymap.has("name")
+            //clear all element in a map
+            mymap.clear();
+            document.getElementById('afterclear').innerHTML='Afetr clearing map,size '+ mymap.size//0
+        }
+
+    </script>
+</head>
+<body>
+
+    <h1>Map Methods</h1>
+    <h2>Map Operation</h2>
+    <button onclick="demonstratemapmethods()">Run Map Methods</button>
+    <div id="getname"></div>
+    <div id="haskey"></div>
+    <div id="afterdelete"></div>
+    <div id="afterclear"></div>
+
+
+    
+</body>
+</html>

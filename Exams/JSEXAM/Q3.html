@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reading List Manager</title>
+    <style>
+        ul{ text-decoration: none;}
+        li{text-decoration: none;}
+
+        .read{text-decoration: line-through; color: gray;}
+        .priority.high{color: rgb(241, 45, 19);}
+        .priority.medium{color: rgb(247, 232, 25) ;}
+        .priority.low{color: rgb(41, 252, 13);}
+
+    </style>
+</head>
+<body>
+    <h1>Book Reading List Manager</h1>
+    <label for="book">Enetr Book Title:</label>
+    <input type="text"id ="book"> <br>
+    <label for="priority">Reading Priority(1-High, 2-Medium, 3-Low):</label>
+    <input type="number" id="priority"> <br>
+    <button onclick="addbook()" >Add Book</button>
+    <ul id="booklist"></ul>
+    <script src="book.js"></script>
+    
+</body>
+</html>

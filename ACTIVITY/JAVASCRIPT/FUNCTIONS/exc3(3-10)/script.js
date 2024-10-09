@@ -50,7 +50,6 @@ function addMovie(){
 
         const removeButton = document.createElement('button');
         removeButton.textContent = ' Remove';
-
         removeButton.onclick = function(){
             movieList.removeChild(li);
             const movieIndex =movies.indexOf(movie);

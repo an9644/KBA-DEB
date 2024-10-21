@@ -1,7 +1,8 @@
 // type conversion or coercion
 
-console.log("20" + 5); //205 ==> String concatenation string randum onnich verum + avilla (+/they contannate)
 
+//integer
+console.log("20" + 5); //205 ==> String concatenation string randum onnich verum + avilla (+/they contannate)
 console.log("20"- 5); //15 ==>  the string act like integer 
 console.log("20" * 5) //100 the string act like integer 
 console.log("20" /5)// 4 the string act like integer 

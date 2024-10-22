@@ -1,11 +1,13 @@
 import express,{json} from 'express'; // express file import cheyyth edkunva';
 import { adminRoute } from './ROUTES/adminroutes.js';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const app=express();
 app.use(json()) // json function appil use cheyynm annale json file ullath aych kodthale backnd manasilaku  app instance use cheyynm annu json=function
 app.use('/',adminRoute)
 
-const port =8000   
+const port =process.env.Port;   
 
 app.listen(port,()=>{
     console.log(`Serevr is Listening to ${port} `)

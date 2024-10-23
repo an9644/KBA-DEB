@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp-5 -Areas</title>
+</head>
+<body>
+
+    <label for="">Enter side of the Square</label>
+    <input type="number" id="square"><br>
+    <button onclick="Asquare()">Area of Square</button>
+    <p id="result1" ></p>
+
+    <label for="">Enter the length :</label>
+    <input type="number"  id="length"><br>
+    <label for="">Enter the bredth</label>
+    <input type="number" id="bredth"><br>
+    <button onclick="Arect()">Area of Rectangle :</button>
+    <p id="result2"></p>
+ 
+    <label for="">Enetr Radius</label> 
+    <input type="number" id="radius"><br>
+    <button onclick="Acircle()">Area of Circle</button> <br>
+    <p id="result3"></p>
+
+    <script>
+        function  Asquare(){
+            const side1= parseInt(document.getElementById('square').value)
+
+            const result= side1 * 4
+            document.getElementById('result1').textContent=("Area of Square",result)
+        }
+        function Arect(){
+            const l=parseInt(document.getElementById('length').value)
+            const b=parseInt(document.getElementById('bredth').value)
+
+            const result= 2*(l + b)
+            document.getElementById('result2').textContent=("Area of Rectangle",result)           
+        }
+        function Acircle(){
+                const  radius= parseInt(document.getElementById('radius').value)
+                const pi=3.14
+
+                const result= pi * (radius * 2)
+                document.getElementById('result3').textContent=("Area of Circle",result)           
+
+        }
+    </script>
+
+    
+</body>
+</html>

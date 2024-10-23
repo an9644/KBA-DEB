@@ -1,5 +1,6 @@
 import { json, Router } from "express"
 import bcrypt from 'bcrypt'
+import { authenticate } from "../../../KBA-Courses/BACKEND/Middleware/auth";
 
 const adminRouter=Router()
 const library=new Map();
@@ -41,6 +42,10 @@ adminRouter.post('/signup',async(req,res)=>{
 
         }
 
+    })
+    adminRouter('/addcourse',authenticate,(req,res)=>{
+        const {title,bookid,author,genre,description,price}=re.body
+        
     })
 
 export {adminRouter}

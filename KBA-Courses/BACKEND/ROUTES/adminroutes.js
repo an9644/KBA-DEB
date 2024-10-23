@@ -20,10 +20,10 @@ adminRoute.post('/signup',async(req,res)=>{
     // console.log('Hiii');
     const data =req.body
     console.log(req.body); 
-    console.log(data.FirstName);
+    // console.log(data.FirstName);
     const fname=data.FirstName  //storing individually
         const {FirstName,LastName,UserName,Password,Role}=data // storing using mappimg method 
-        console.log(LastName)
+        // console.log(LastName)
         const newP=await bcrypt.hash(Password,10) //used for security of password they show the exact password 
     //map start    
     if(user.has(UserName)){
@@ -163,6 +163,25 @@ adminRoute.put('/update',authenticate,(req,res)=>{
         
     } 
    })
+
+   adminRoute.delete('/deletecourse',authenticate,(req,res)=>{
+        console.log(req.query.Courseid)
+        const result=req.query.Courseid
+        if(course.has(result)){
+            console.log(course.delete(result))
+            console.log("Course removed")
+            
+        } else{
+            console.log("no item found");
+            
+        }
+
+   })
+   adminRoute.post('/logout',(req,res)=>{
+    res.clearCookie('authtoken');
+    res.send('logout successfully');
+    console.log('logout successfully');
+})
 
 
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp-11</title>
+</head>
+<body>
+
+    <label for="">Enetr your number :</label>
+    <input type="number" name="" id="num"><br>
+    <button onclick="reverse()">Reverse</button>
+    <p id="result"></p>
+
+    <script>
+        function reverse(){
+            const num= document.getElementById('num').value
+
+            const num1 = num.split('').reverse().join('');
+            document.getElementById('result').textContent=`Reversed number is:${num1}`
+
+
+        }
+    </script>
+    
+</body>
+</html>

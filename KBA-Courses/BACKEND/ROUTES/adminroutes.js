@@ -184,6 +184,32 @@ adminRoute.put('/update',authenticate,(req,res)=>{
 })
 
 
+adminRoute.get('/viewUser',authenticate,(req,res)=>{
+    try{
+    const user=req.userrole;
+    res.json({user});}
+    catch{
+        res.status(404).json({message:'user not authorized'});
+    }
+})
+
+adminRoute.get('/viewCourse', async(req,res)=>{
+    try{
+        console.log(course.size);
+
+        if(course.size!=0){
+           
+            
+        res.send(Array.from(course.entries()))
+    }
+else{
+    res.status(404).json({message:'Not Found'});
+}}
+    catch{
+        res.status(404).json({message:"Internal error"})
+    }
+})
+
 
 
 export {adminRoute} ;

@@ -7,7 +7,7 @@ const secretkey=process.env.Secretkey
 
 
 const authenticate=(req,res,next)=>{
-   const cookies= req.headers.cookie;
+   const cookies= req.headers.cookie;//cookies create 
     console.log(cookies)
     const cookie=cookies.split(';');
     for(let cooki of cookie){   //2 variabe authtoken name and token they are stored in different arrays 

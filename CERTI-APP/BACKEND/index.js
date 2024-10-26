@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 const app=express();
 app.use(json());
-app.use('/',adminrouter)
+app.use('/',adminrouter)//redirect cheyyam
 
 const port=process.env.Port
 

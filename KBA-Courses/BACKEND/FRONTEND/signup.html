@@ -23,8 +23,9 @@
             //promise pending error
 
             //data store avunnn 
-            const response=await fetch("http://127.0.0.1:8000/signup",{ //1 arg ath api ahnu data povandath post method
+            const response=await fetch("http://127.0.0.1:8001/signup",{ //1 arg ath api ahnu data povandath post method
                method:"POST",
+            //    credentials: 'include',
                headers:{ "Content-Type": 'application/json' },
                body:JSON.stringify( {   // ethanu req.body
                     FirstName:Fname,
@@ -37,15 +38,15 @@
         })
         console.log(response.status)   
         if(response.status==201){
-            window.location.href='./signup.html'
+            window.location.href='./login.html'
             // alert("Username added  successfuly")
         }else if(response.status==400){
             alert("Username already exist")
         }else{
             alert("Server error try after sometime")
         }
-        // const data=await response.json();
-        // console.log(data)
+        const data=await response.json();
+        console.log(data)
 
         }
     

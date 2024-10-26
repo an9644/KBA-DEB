@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp-10</title>
+</head>
+<body>
+    <label for="">Enter Elements (by spaces): </label>
+    <input type="text" id="nums"><br>
+    <button onclick="max()">Maximum</button>
+    <p id="maximum"></p>
+
+    <script>
+        function max(){
+            const nums = document.getElementById('nums').value;
+            const numarray = nums.split(' ').map(Number);
+
+            const maxNum = Math.max(...numarray);//spread operator/maximum number
+
+            document.getElementById('maximum').textContent = `Largest Number is ${maxNum}`;
+        }
+    </script>
+
+</body>
+</html>

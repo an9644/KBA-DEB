@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate View</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        window.onload=async()=>{
+          
+          let cid=localStorage.getItem("searchingId")
+          console.log(cid);
+          try {
+            const response= await fetch(`http://127.0.0.1:5000/getcerti?CertiId=${cid}`,{
+              method:"GET",
+              credentials:"include",
+          });
+
+          console.log(response);
+
+          if (response.ok) {//200 to 299
+            let data=await response.json()
+            console.log(data)
+            document.getElementById("name").textContent = data.CandidateName;
+            document.getElementById("grade").textContent = data.Grade;
+            document.getElementById("course").textContent = data.Coursename;
+            document.getElementById("issuedt").textContent = data.IssueDate;        
+          } else {
+            console.log("Failed to fetch Cretificate data");           
+          }
+          } catch (error) {
+            console.error("Error",error)            
+          }
+          }
+    </script>
+</head>
+<body class="bg-fuchsia-100" >
+    <div class="">
+        <div class=" mt-44 flex justify-center text-2xl font-semibold">
+        <label for="">Kerala Blockchain Academy</label></div>
+        <div class=" mt-8 flex justify-center"><img class="" src="certi.png" width="150" height="150"alt=""></div>
+        <div class=" mt-4 flex justify-center"><p class="ml-8">This is to certify that <b id="name"></b> </p></div>
+          <div class=" mt-4 flex justify-center"> <p> has successfully completed <b id="course"></b></p></div>
+           <div class=" mt-4 flex justify-center"> with  &nbsp;<b id="grade"></b> &nbsp;  &nbsp;<b id="issuedt"></b></p></div>
+            <div class=" mt-4 flex justify-center"><a href="issuecerti.html" align="right">back</a></div>
+    </div>
+        
+
+
+</body>
+</html>

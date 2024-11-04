@@ -3,11 +3,34 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { authenticate } from "../Middleware/auth.js";
 import dotenv from 'dotenv';
+import mongoose from 'mongoose'
+
  
 dotenv.config();
 const adminRoute=Router();
-const user=new Map(); 
+// const user=new Map(); 
 const secretkey=process.env.Secretkey
+//define user schema(designing) for signin  and login
+const userSchema=new mongoose.Schema({
+    firstName:String,
+    lastName:String,
+    userName: {type:String,unique:true},
+    password:String,
+    role:String
+})
+const User =mongoose.model('Userdetails',userSchema)
+
+ // create model for addcourse
+ const courseSchema= new mongoose.Schema({
+    courseName:String,
+    courseId: {type:String,unique:true},
+    courseType:String,
+    description:String,
+    price:String
+})
+const Course =mongoose.model('courses',courseSchema)
+
+mongoose.connect("mongodb://localhost:27017/KBA-Courses")
 
 adminRoute.get('/',(req,res)=>{ //callbk func // eth index page venditt matgarm 
     res.send("Hello World") 
@@ -17,23 +40,27 @@ adminRoute.get('/',(req,res)=>{ //callbk func // eth index page venditt matgarm
 
 adminRoute.post('/signup',async(req,res)=>{ 
     try{
-    // console.log('Hiii');
     const data =req.body
     console.log(req.body); 
-    // console.log(data.FirstName);
     const fname=data.FirstName  //storing individually
         const {FirstName,LastName,UserName,Password,Role}=data // storing using mappimg method 
-        // console.log(LastName)
-        const newP=await bcrypt.hash(Password,10) //used for security of password they show the exact password 
+        const newPassword=await bcrypt.hash(Password,10) //used for security of password they show the exact password 
     //map start    
-    if(user.has(UserName)){
-        res.status(400).json({meassage:"User already exist!"})
+    const existingUser=await User.findOne({userName:UserName})
+    if(existingUser){
+        res.status(400).json({message:"User already exist!"})
     }else{
-        console.log(newP)
-        user.set(UserName, {
-            FirstName,LastName,Password:newP,Role });
-            console.log(user.get(UserName))
-            res.status(201).json({Meassage:"data Added successfully"})
+        //creating new user
+        const newUser=new User({
+            firstName:FirstName,
+            lastName:LastName,
+            userName: UserName,
+            password:newPassword,
+            role:Role
+        })     
+
+        await newUser.save();
+            res.status(201).json({message:"data Added successfully"})
         }
     }  
     catch(error){
@@ -44,27 +71,27 @@ adminRoute.post('/signup',async(req,res)=>{
 
 //login
 
-adminRoute.post('/login',async(req,res)=>{//callbak function
+adminRoute.post('/login', async (req,res)=>{//callbak function
     const { UserName,Password } =req.body;
     console.log(UserName)
-    const result =user.get(UserName)  //.get vannath username le valuene ahnu read  cheyyunne atha
+    const result =await User.findOne({userName:UserName})  //mongo
     console.log(result)
 
     // cheching if the password is corect 
     if(!result){
         res.status(404).json({message:"User does not exist"})
     }else{
-
-        const valid =await bcrypt.compare(Password,result.Password)
+        const valid = await bcrypt.compare(Password,result.password)
         console.log(valid)
-        // res.status(201).json({message:"Succesfully Logged in "})
 
         if(valid){ // toekns are created by usernameand role
-            const token=jwt.sign({UserName:UserName,Role:result.Role},secretkey,{expiresIn:'1h'}) //function({para1 : athokke venm token genarate chyn,seceretkey kodukkumbol anu eth work aunne}, 1 houe time ulle ath kazhinja veendum login cheyynm)
+            const token=jwt.sign({UserName:result.userName,Role:result.role},secretkey,{expiresIn:'1h'}) //function({para1 : athokke venm token genarate chyn,seceretkey kodukkumbol anu eth work aunne}, 1 houe time ulle ath kazhinja veendum login cheyynm)
             res.cookie('authToken',token,{ httpOnly:true });                                     // eth store avunnath browser cookie
-            res.status(200).json({token})
-            console.log(token)
+            console.log(token)       
+            return res.status(200).json({ token })
 
+        }else{
+            res.status(400).json({meassage:"invalid password"})
         }
     }
     
@@ -73,70 +100,77 @@ adminRoute.post('/login',async(req,res)=>{//callbak function
 
 //addcourse
 
-const course=new Map() // map declaring ourside updte and add course can use the same map
+// const course=new Map() // map declaring ourside updte and add course can use the same map
 
-adminRoute.post('/addcourse',authenticate,(req,res)=>{
-    res.status(201).json({message:"Hiii"})
-    console.log(req.UserName)
-    console.log(req.Role)
+adminRoute.post('/addcourse',authenticate,async(req,res)=>{    
 
-        if(req.Role=='admin'){         
-
-            console.log("Admin login success")
             try{
-                const data=req.body
-                const {Coursename,Courseid,Coursetype,Description,Price}=data
-                // console.log(data)
-                        
-                if(course.has(Courseid)){
-                    res.status(400).json({message:"Course Already Exist!!"})
+                if(req.Role=='admin'){      
+                    console.log("Admin login success")   
+
+                 const {CourseName,CourseId,CourseType,Description,Price}=req.body                     
+
+                const existingCourse= await Course.findOne({courseId : CourseId})                        
+                if(existingCourse){
                     console.log("Course Already Exist!!")
+                    return res.status(400).json({message:"Course Already Exist!!"})
+                 }                         
+                
+                    //creating new course
+                    const newCourse=new Course({
+                    courseName:CourseName,
+                    courseId: CourseId,
+                    courseType:CourseType,
+                    description:Description,
+                    price:parseInt(Price)
+                    })
+
+                    //save course  to mongo
+                    await newCourse.save()
+                    console.log("Course Addedd Successfully!!")
+                     return res.status(201).json({message:"Course Addedd Successfully!!"})
+                    // alert("Course Addedd Successfully!!")
                 }else{
-                    course.set(Courseid,{Coursename,Coursetype,Description,Price})
-                    console.log(course.get(Courseid))
+                console.log("You dont have permission ")
+                return res.status(403).json({ message: "You don't have permission" });
                 }
-
             }catch(error){
-                res.status(500).json(error)
+                console.error(error.message);
+                res.status(500).json({message: "Internal Server Error" })
             }
-
-        }else{
-            console.log("Invalid Crendentials")
-        }
-
-
-    })
+        })
 
 //UPDATE COURSE
 //using put
-adminRoute.put('/update',authenticate,(req,res)=>{
-
-            if(req.Role=='admin'){
-                console.log("Admin login successfull")
+adminRoute.put('/update',authenticate,async(req,res)=>{
+            
                 try {
-                    const {newCoursename,Courseid,newCoursetype,newDescription,newPrice}=req.body
+                    const {newCoursename,courseId,newCoursetype,newDescription,newPrice}=req.body
+                    const existingCourse= await Course.findOne({courseId : courseId})           
 
-                    if(course.has(Courseid)){     
-                         
-                       const  data=course.get(Courseid)    
-                        data.Coursename= newCoursename || data.Coursename
-                        data.Coursetype= newCoursetype || data.Coursetype
-                        data.Description= newDescription || data.Description
-                        data.Price = newPrice || data.Price
-    
-                        course.set(Courseid,data)
-                        console.log(course.get(Courseid))          
-                
-                        console.log("Course updated successfully")
-                        res.status(400).json({message:"Course updated successfully!!"})                    
+                    if(!existingCourse){   
+                        // console.log("Course does not exist")
+                       return  res.status(400).json({message:"Course does not exist!!"})     
                     }
+                    if (req.Role !== 'admin') {
+                        console.log("You dont have permission ");
+                        return res.status(403).json({ message: "You don't have permission" });
+                      }
+                   
+                        //  const  data=Course.findOne(Courseid)
+                        existingCourse.courseName= newCoursename || existingCourse.courseName
+                        existingCourse.courseType= newCoursetype || existingCourse.courseType
+                        existingCourse.description= newDescription || existingCourse.description
+                        existingCourse.price = newPrice || existingCourse.price
+
+                        await existingCourse.save()
+                        console.log("Course updated successfully")
+                        res.status(200).json({message:"Course updated successfully!!"})                
+                      
                     }catch(error) {
-                        res.status(500).json(error)
+                        res.status(500).json({message:"Internal server error"})
                     }                    
-            }else{   
-                console.log("Invalid Crendential")
-            }
-        })
+            })
 
         // GETCOURSE
 
@@ -149,60 +183,71 @@ adminRoute.put('/update',authenticate,(req,res)=>{
         
 //     }
 //   })
+
    //ussing query
-   adminRoute.get('/getcourse',(req,res)=>{
+   adminRoute.get('/getcourse',async(req,res)=>{
+    // console.log(req.query.Courseid) //maping method
+    
     try {
+        const search=req.query.CourseId
+        console.log(search);   
+        const result=await Course.findOne({courseId:search});
+        if(result){
+            res.status(200).send(result)
+        } 
+        else{
+            res.status(400).json({message:'No such course'})
+            // console.log("No such course")
+        }
         
     } catch (error) {
-        
+        res.status(500).json({message:'Internal server error'})     
+
     }
-    console.log(req.query.Courseid)
-    const result=req.query.Courseid
-    if(course.has(result)){
-        console.log(course.get(result));
-        
-    } 
+    
+    
    })
 
-   adminRoute.delete('/deletecourse',authenticate,(req,res)=>{
-        console.log(req.query.Courseid)
-        const result=req.query.Courseid
-        if(course.has(result)){
-            console.log(course.delete(result))
-            console.log("Course removed")
-            
-        } else{
-            console.log("no item found");
-            
-        }
+   adminRoute.delete('/deletecourse',authenticate,async(req,res)=>{
+            try {
+                const result=req.query.courseId
+                    const course  = await Course.deleteOne(result)
 
-   })
-   adminRoute.post('/logout',(req,res)=>{
-    res.clearCookie('authtoken');
-    res.send('logout successfully');
-    console.log('logout successfully');
-})
+                    if(course){
+                    // console.log(course.delete(result))
+                    console.log("Course removed")
+                    return res.status(200).json({meassage:"Course removed"})                    
+                } else{
+                    console.log("no item found");    
+                    return res.status(200).json({meassage:"no item found"})      
+                }                
+            } catch (error) {
+                console.error(error.message);
+                return res.status(500).json({meassage:"Internal server Error"})            
+            }
+                
+
+        })
+   
 
 
-adminRoute.get('/viewUser',authenticate,(req,res)=>{
+adminRoute.get('/viewuser',authenticate,(req,res)=>{
     try{
-    const user=req.userrole;
+    const user=req.Role;
     res.json({user});}
     catch{
         res.status(404).json({message:'user not authorized'});
     }
 })
 
-adminRoute.get('/viewCourse', async(req,res)=>{
+adminRoute.get('/viewcourse', async(req,res)=>{
     try{
-        console.log(course.size);
 
-        if(course.size!=0){
-           
-            
-        res.send(Array.from(course.entries()))
-    }
-else{
+        const viewallcourse=await Course.find()
+
+        if(viewallcourse){                    
+        res.send(Array.from(viewallcourse.entries()))
+    }else{
     res.status(404).json({message:'Not Found'});
 }}
     catch{
@@ -210,6 +255,11 @@ else{
     }
 })
 
+adminRoute.post('/logout',(req,res)=>{
+    res.clearCookie('authtoken');
+    res.send('logout successfully');
+    console.log('logout successfully');
+})
 
 
 export {adminRoute} ;

@@ -32,18 +32,7 @@ window.onload = () => {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>front</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<!-- <script>
-       function handleSearch(event) {
-            event.preventDefault(); 
-            const certificateId = document.getElementById('certificateid').value;
 
-            // Display an alert with the entered certificate ID
-            alert('Searching for Certificate ID: ' + certificateId);
-
-            // Redirect to another page, passing the certificate ID as a query parameter
-            window.location.href="/viewcertificate.html";
-        }
-</script> -->
 <script>
     function handleSearch(event) {
         event.preventDefault(); 

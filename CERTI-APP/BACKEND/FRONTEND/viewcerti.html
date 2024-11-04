@@ -8,26 +8,32 @@
     <script>
         window.onload=async()=>{
           
-          let cid=localStorage.getItem("searchingId")
-          console.log(cid);
+          let Cid=localStorage.getItem("searchingId")
+          const certificates = JSON.parse(localStorage.getItem('certificates')) || [];
+
+          console.log('Cid:', Cid);
+          console.log('certificates:', certificates);
+
           try {
-            const response= await fetch(`http://127.0.0.1:5000/getcerti?CertiId=${cid}`,{
-              method:"GET",
-              credentials:"include",
-          });
+                
+          if (!Cid) {
+              alert("No certificate ID found. Please try again.");
+              window.location.href = 'front.html';
+              return;
+                  }
+   // Find the certificate with the matching ID
+       const data = certificates.find(cert => cert.cid === Cid);
 
-          console.log(response);
-
-          if (response.ok) {//200 to 299
-            let data=await response.json()
-            console.log(data)
-            document.getElementById("name").textContent = data.CandidateName;
+       if(!data){
+          console.log("Certificate data not found")
+          window.location.href='/notfound.html'
+          return;
+       }
+           document.getElementById("name").textContent = data.CandidateName;
             document.getElementById("grade").textContent = data.Grade;
             document.getElementById("course").textContent = data.Coursename;
-            document.getElementById("issuedt").textContent = data.IssueDate;        
-          } else {
-            console.log("Failed to fetch Cretificate data");           
-          }
+            document.getElementById("issuedt").textContent = data.IssueDate
+
           } catch (error) {
             console.error("Error",error)            
           }

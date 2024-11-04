@@ -251,7 +251,7 @@ adminRoute.get('/viewcourse', async(req,res)=>{
     res.status(404).json({message:'Not Found'});
 }}
     catch{
-        res.status(404).json({message:"Internal error"})
+        res.status(500).json({message:"Internal error"})
     }
 })
 

@@ -9,19 +9,17 @@
     <script>
       function searchcerti(event) {
         event.preventDefault()
-        const certiId = document.getElementById('searchcerti').value.trim();
+        const Cid = document.getElementById('searchcerti').value.trim();
 
-        alert('Searching for Certificate ID: ' + certiId);
-        window.location.href="/viewcertificate.html";
+        // alert('Searching for Certificate ID: ' + certiId);
+        // window.location.href="/viewcertificate.html";
 
-    
-        if (certiId !== '') {
+        if (Cid !== '') {
           // Store certiId in local storage
-          localStorage.setItem('searchingId', certiId);
-
+          localStorage.setItem('searchingId', Cid);
            
           // Redirect to viewcerti page
-          window.location.href = 'viewcerti.html';
+          window.location.href = './viewcerti.html';
         } else {
           alert('Please enter a certificate ID');
         }
@@ -46,7 +44,7 @@
               <div class="flex justify-center mt-12"><img src="certi.png" width="180" height="180" alt=""></div> 
             </div>
             <div class="flex justify-center mt-10 ml-7 "><input id="searchcerti" class="border border-cyan-400" type="text" placeholder="Enter certificate ID To View"> &nbsp;
-              <button class="bg-cyan-400 w-24 h-8" onclick="searchcerti()">Search</button>
+              <button class="bg-cyan-400 w-24 h-8" onclick="searchcerti(event)">Search</button>
             <!-- <input class="bg-cyan-400 w-24 h-8" type="button" value="Search"></div> -->
               
 </body>

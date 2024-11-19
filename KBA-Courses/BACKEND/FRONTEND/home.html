@@ -9,7 +9,6 @@
 
     <script>
         window.onload=async()=>{
-            console.log("hi");
             try{
             
            const response=await fetch("http://127.0.0.1:8001/viewuser",{
@@ -143,8 +142,7 @@
         <div class='flex justify-center md:justify-end items-center mt-2 md:mt-0 space-x-5 md:space-x-10'>
             <a href="#" class='ml-20'>Home</a>
             <a href="#" class='ml-20'>Courses</a>
-            <a href="#" class='ml-20'>Contact Us</a>
-            
+            <a href="#" class='ml-20'>Contact Us</a>            
             <a href="addcourse.html" id="admin" class='ml-20' style="display: none;">Add Course</a>
             <a class='ml-20' href="#" onclick="logout()">Logout</a>
         </div>

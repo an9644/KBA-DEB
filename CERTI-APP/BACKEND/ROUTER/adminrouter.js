@@ -146,7 +146,7 @@ adminrouter.get('/getcerti',async (req, res) => {
   })
 
 
-adminrouter.post('/logout',(req,res)=>{
+adminrouter.get('/logout',(req,res)=>{
     res.clearCookie('authtoken');
     res.send('logout successfully');
     console.log('logout successfully');

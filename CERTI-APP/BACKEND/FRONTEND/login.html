@@ -10,8 +10,8 @@
        async function createaccnt(event){
             event.preventDefault()
 
-            const Username= document.getElementById('username').value
-            const Password= document.getElementById('password').value
+            const username= document.getElementById('username').value
+            const password= document.getElementById('password').value
             
             console.log(username,password)
 
@@ -21,8 +21,8 @@
                 credentials:'include',
                 headers:{'Content-Type': 'application/json'},
                 body:JSON.stringify({
-                    Username,
-                    Password
+                    Username:username,
+                    Password:password
                 })                
             })
             console.log(response)   

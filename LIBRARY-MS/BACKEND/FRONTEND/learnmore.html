@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script>
+        window.onload=async()=>{
+         
+         let books=localStorage.getItem("book")
+         console.log(books);
+         
+        const response= await fetch(`http://127.0.0.1:3000/getbook?bookid=${books}`,{
+             method:"GET",
+             credentials:"include",
+         });
+ 
+         console.log(response);
+ 
+         let data=await response.json()
+         console.log(data)
+        document.getElementById("booktitle").textContent=data.courseName
+         document.getElementById("author").textContent=data.courseType
+         document.getElementById("des").textContent=data.price
+         document.getElementById("price").textContent=data.description
+     }
+       
+ //delete course
+         async function deletecourse(event){
+                 event.preventDefault()
+                 let courses=localStorage.getItem("book");
+             
+                     const response= await fetch(`http://127.0.0.1:3000/deletebook?bookid=${books}`,{
+                     method:"DELETE",
+                     credentials:"include",
+                 })  
+ 
+                 console.log(response);
+                 const data= await response.json()
+                 console.log(data);
+                 if (response.status === 200) {
+                     alert("Book has been deleted");
+                     // document.body.innerHTML = "<div class='flex justify-center items-center h-screen text-3xl text-gray-700'>Course has been deleted</div>";
+                     window.location.href='./viewbooks.html'
+                 } else if (response.status === 400) {
+                     alert(data.message);
+                 } else {
+                     alert('Failed to delete book');
+                 }
+                 }
+ 
+     </script> -->
+
+</head>
+<body class="bg-purple-100">
+    <div class="flex justify-center gap-16 text-2xl  mt-5 text-purple-800 p-4">
+        <a href="home.html">Home</a>
+        <a href="addbook.html">Add Book</a>
+        <a href="viewbooks.html">View Book</a>
+        <a href="login.html">Login</a>
+    </div>
+
+ 
+    
+      <br>
+      <div class="ml-[400px] rounded-md [600px]  w-[500px] p-4 bg-purple-200">
+        <!-- <img src="images.jpeg" class="mt-2 ml-20 " alt=""> -->
+         <div id="image"></div>
+         
+                <div class="grid grid-cols-3 mt-4">
+                 <div class="frist">
+                     <!-- <h4 class="text-fuchsia-500 font-bold text-xl">s122</h4> -->
+                      <div class="text-fuchsia-700 font-bold text-3xl" id="booktitle"></div>
+                 </div><br>
+                 <div class="text-fuchsia-700 font-bold text-3xl" id="author"></div>
+ 
+                 <div class="ml-20 text-red-600 font-bold">
+                     <!-- for price -->
+                     <div id="price"></div>    
+                 </div>
+           
+                 <div class="ml-4 text-white bg-violet-600 rounded text-center  w-32">
+                 <button class="bg-violet-600 h-18 mr-8 " type="submit" value="Add to cart">Add to Cart</button>
+   
+                 </div>
+ 
+                </div>
+             
+                <div class="des">
+ 
+         <h2 class=" text-fuchsia-500 font-bold text-xl mt-4">Description</h2>
+         <!-- for description -->
+         <div class="mt-2  overflow-y-scroll overflow-x-hidden h-12 justify-center" id="Cdes"></div>
+         <!-- <h2 class=" text-fuchsia-500 font-bold text-xl mt-2">prerequisites</h2>
+         <ul class="list-disc px-4 text-sm mt-2">
+             <li>Basic understanding of blockchain technology.</li>
+             <li>Famililarity with programming languages.</li>
+             <li>Internet access.</li>
+         </ul>
+         <h2 class=" text-fuchsia-500 font-bold text-xl mt-2">Fetures</h2>
+         <ul  class="list-disc text-sm px-4 mt-2">
+             <li>40 hours of content.</li>
+             <li>certificate of completion.</li>
+             <li>Access to community forums.</li>
+             <li>Downloadable resourcses.</li>
+             <li>24/7 support.</li>
+         </ul>
+     </div>
+      </div>
+      <div class="ml-[1000px] pl-12"> 
+        <button class=" bg-blue-700 text-white p-2  rounded-full  text-sm" type="submit"  vlaue="Edit Course"> <a href="updatecourse.html">Edit Course</a></button>
+         <button class="bg-red-700 text-white p-2 ml-4 rounded-full text-sm" type="submit" onclick="deletecourse(event)" vlaue="Remove Course"> Remove Course</button>
+         <br><br>
+      </div> -->
+    
+</body>
+</html>

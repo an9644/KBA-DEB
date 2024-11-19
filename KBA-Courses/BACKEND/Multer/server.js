@@ -13,7 +13,7 @@ const app = express();
 
 // Define the Image schema
 const imageSchema = new mongoose.Schema({
-  filename: String,
+  filename: String, 
   originalname: String,
   path: String
   

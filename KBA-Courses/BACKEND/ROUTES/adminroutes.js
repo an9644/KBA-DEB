@@ -14,7 +14,7 @@ const secretkey=process.env.Secretkey
 const userSchema=new mongoose.Schema({
     firstName:String,
     lastName:String,
-    userName: {type:String,unique:true},
+    userName:{type:String,unique:true},
     password:String,
     role:String
 })
@@ -23,7 +23,7 @@ const User =mongoose.model('Userdetails',userSchema)
  // create model for addcourse
  const courseSchema= new mongoose.Schema({
     courseName:String,
-    courseId: {type:String,unique:true},
+    courseId:{type:String,unique:true},
     courseType:String,
     description:String,
     price:String
@@ -145,8 +145,10 @@ adminRoute.post('/addcourse',authenticate,async(req,res)=>{
 adminRoute.put('/update',authenticate,async(req,res)=>{
             
                 try {
-                    const {newCoursename,courseId,newCoursetype,newDescription,newPrice}=req.body
-                    const existingCourse= await Course.findOne({courseId : courseId})           
+
+                    const {CourseName,CourseId,CourseType,Description,Price}=req.body                     
+                     const existingCourse= await Course.findOne({courseId : CourseId})           
+            
 
                     if(!existingCourse){   
                         // console.log("Course does not exist")
@@ -157,15 +159,14 @@ adminRoute.put('/update',authenticate,async(req,res)=>{
                         return res.status(403).json({ message: "You don't have permission" });
                       }
                    
-                        //  const  data=Course.findOne(Courseid)
-                        existingCourse.courseName= newCoursename || existingCourse.courseName
-                        existingCourse.courseType= newCoursetype || existingCourse.courseType
-                        existingCourse.description= newDescription || existingCourse.description
-                        existingCourse.price = newPrice || existingCourse.price
+                        existingCourse.courseName= CourseName || existingCourse.courseName
+                        existingCourse.courseType= CourseType || existingCourse.courseType
+                        existingCourse.description= Description || existingCourse.description
+                        existingCourse.price = Price || existingCourse.price
 
                         await existingCourse.save()
                         console.log("Course updated successfully")
-                        res.status(200).json({message:"Course updated successfully!!"})                
+                        res.status(200).json({message:"Course updated successfully!!",existingCourse})                
                       
                     }catch(error) {
                         res.status(500).json({message:"Internal server error"})

@@ -30,7 +30,7 @@
 
       fetch(imageUrl)
         .then(response => {
-          if (!response.ok) {
+          if (!response.ok) { 
             throw new Error('Image not found');
           }
           return response.blob();

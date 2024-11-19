@@ -26,12 +26,6 @@
         document.getElementById("Cdes").textContent=data.description
     }
       
-
-// edit button
-        function handleupdate(value1) {
-        localStorage.setItem('course', value1);
-        window.location.href = './updatecourse.html';
-        }
 //delete course
         async function deletecourse(event){
                 event.preventDefault()
@@ -121,7 +115,7 @@
     </div>
      </div>
      <div class="ml-[1000px] pl-12"> 
-       <button class=" bg-blue-700 text-white p-2  rounded-full  text-sm" type="submit" onclick="handleupdate()" vlaue="Edit Course"> Edit Course</button>
+       <button class=" bg-blue-700 text-white p-2  rounded-full  text-sm" type="submit"  vlaue="Edit Course"> <a href="updatecourse.html">Edit Course</a></button>
         <button class="bg-red-700 text-white p-2 ml-4 rounded-full text-sm" type="submit" onclick="deletecourse(event)" vlaue="Remove Course"> Remove Course</button>
         <br><br>
      </div>

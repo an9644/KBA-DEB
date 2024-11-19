@@ -159,3 +159,84 @@
     
         }
     </script>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Update Course</title>
+    <script>
+    
+    window.onload=async()=>{
+            
+            let courses=localStorage.getItem("course")
+            console.log(courses);
+            
+           const response= await fetch(`http://127.0.0.1:8000/getCourse/${courses}`,{
+                method:"GET",
+                credentials:"include",
+            });
+    
+            console.log(response);
+    
+            let data=await response.json()
+        
+            
+            console.log(data.course);
+            let items=data.course
+       
+            document.getElementById("courseName").value=courses
+            document.getElementById("courseId").value=items.courseId
+            document.getElementById("courseType").value=items.courseType
+            document.getElementById("Price").value=items.Price
+            document.getElementById("Description").value=items.courseDescription
+    
+    
+        }
+    
+       async function updateCourse(event){
+            event.preventDefault();
+    
+            let cname= document.getElementById("courseName").value
+            let cid=  document.getElementById("courseId").value
+            let ctype= document.getElementById("courseType").value
+            let cprice= document.getElementById("Price").value
+            let cdesc= document.getElementById("Description").value
+            
+            console.log(cname,cid,ctype,cprice,cdesc);
+    
+         const response=  await fetch('http://127.0.0.1:8000/updateCourse',{
+                method:"PATCH",
+                credentials:"include",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                
+             courseName:cname,
+             courseId:cid,
+             courseType:ctype,
+             Price:cprice,
+             courseDescription:cdesc
+     
+    
+                })
+            })
+            console.log(response);
+            const data= await response.json();
+            console.log(data);
+    
+          if(response.status==200){
+             alert("Course updated Successfully")
+             window.location.href='./viewCourse.html'
+          }else if(response.status==400){
+            alert("Course not found")
+          }
+         
+            
+            
+    
+        }
+    </script>

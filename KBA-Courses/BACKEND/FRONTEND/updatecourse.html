@@ -12,67 +12,71 @@
                 let courses=localStorage.getItem("course")
                 console.log(courses);
                 
-            const response= await fetch(`http://127.0.0.1:8000/getcourse?CourseId=${courses}`,{
+            const response= await fetch(`http://127.0.0.1:8001/getcourse?CourseId=${courses}`,{
                     method:"GET",
                     credentials:"include",
                 });
 
                 console.log(response);
                 let data=await response.json()
+                console.log(data);
+                
             
                 
                 console.log(data.course);
         
-                document.getElementById("courseName").value=data.courseName
+                document.getElementById("newname").value=data.courseName
                 document.getElementById("courseId").value=data.courseId
-                document.getElementById("courseType").value=data.courseType
-                document.getElementById("Price").value=data.price
-                document.getElementById("Description").value=data.description
+                document.getElementById("newtype").value=data.courseType
+                document.getElementById("newprice").value=data.price
+                document.getElementById("newdes").value=data.description
 
 
     }
-             async function updatecourse(event) {
-            event.preventDefault();
 
-            // const courseId = localStorage.getItem('courseId');
+        
+        async function updatecourse(event){
+            event.preventDefault();
             const Cid = document.getElementById('courseId').value;
-            const Newname = document.getElementById('newname').value;
+            const Newname = document.getElementById('newname').value
             const Newtype = document.getElementById('newtype').value;
             const Newdes = document.getElementById('newdes').value;
             const Newprice = document.getElementById('newprice').value;
 
-            // console.log(Newname,Cid, Newtype, Newdes, Newprice);
+            console.log(Cid,Newname,Newtype, Newname,Newdes,Newprice);
+            
+  
 
-            try {
-                const response = await fetch(`http://127.0.0.1:8001/update`, {
+            const response = await fetch(`http://127.0.0.1:8001/update`,{
                 method: 'PUT',
-                credentials: 'include',
-                headers: { "Content-Type": 'application/json' },
+                credentials:'include',
+                headers:{"Content-Type":"application/json" },
                 body: JSON.stringify({
-                    // Courseid:Cid,
-                    newCoursename: Newname,
-                    newCoursetype: Newtype,
-                    newDescription: Newdes,
-                    newPrice: Newprice
+                    CourseName: Newname,
+                    CourseId:Cid,
+                    CourseType: Newtype,
+                    Description: Newdes,
+                    Price: Newprice
                 })
-                });
+            })
 
-                console.log(response);
-                const data = await response.json();
-                console.log(data);
+            console.log(response);
+            const data = await response.json();
+            console.log(data);
 
-                if (response.status === 200) {
-                window.location.href = './learnmore.html';
-                alert("Course updated Successfully");
-                } else{
-                alert("Course not found");
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert("Failed to update course. Please try again.");
-            }
-            }
+            if (response.status == 200) {
+           
+           alert("Course updated Successfully");
+           window.location.href = './learnmore.html';
+           } else{
+           alert("Course not found");
+           }
+            
+            
+        }
 
+
+          
 
 
 
@@ -107,11 +111,11 @@
             <div class="mt-4"><label for="">Course Type:</label></div>
             <div class="mt-2 ">
                  <select class="h-9 w-full" name="course" id="newtype" required>
-                <option value="select">Select</option>
-                <option value="course 1" >Hybrid</option>
-                <option value="course 2">course 2</option>
-                <option value="course 3">course 3</option>
-                <option value="course 4">course 4</option>
+                <option value="Select" selected>Select</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="course2">course2</option>
+                <option value="course3">course3</option>
+                <option value="course4">course4</option>
             </select>
         </div>
         <div class="mt-4">Description:</div>
@@ -119,11 +123,11 @@
         <div class="mt-4">Price:</div>
         <div class="mt-2" >
             <select class="h-9 w-full" name="amount" id="newprice" required>
-            <option value="select">Select</option>
-            <option value="amount 1" >150000/-</option>
-            <option value="amount 2">50000/-</option>
-            <option value="amount 3">250000/-</option>
-            <option value="amount 4">75000/-</option>
+            <option value="Select">Select</option>
+            <option value="150000" >150000</option>
+            <option value="50000">50000</option>
+            <option value="250000">250000</option>
+            <option value="75000">75000</option>
         </select></div>
         <div class="text-center" ><button class="mt-7 pt-2 text-center border-fuchsia-400 bg-fuchsia-400 shadow-md shadow-black-500 
             rounded-md p-2  h-9">Update Course</button></div>

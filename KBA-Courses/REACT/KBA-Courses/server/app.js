@@ -1,10 +1,11 @@
 const express = require("express");
 const { mongoose } = require("mongoose");
-const cookieParser=require("cookieparser")
-const app = express();
+const cookieParser=require("cookie-parser")
 const cors = require("cors");
 const routes = require("./routes/routes");
 const auth = require('./routes/auth')
+
+const app = express();
 
 app.use(
   cors({ //resourse share communication nadakn from 1 server to anoter .for better connectvity

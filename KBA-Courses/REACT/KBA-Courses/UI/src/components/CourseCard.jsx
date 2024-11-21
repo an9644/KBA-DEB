@@ -20,7 +20,7 @@ const getDescription=()=>{
             <h2 className=' font-bold text-lg text-purple-900 '>{course.title}</h2>
             <img src={rpImage} alt="course thumbnail" className='w-80 h-40 ' />
 
-            <p className='text-black group-hover:text-white my-2 mx-5'>{getDescription()} </p>
+            <p className='text-black group-hover:text-white my-2 mx-5 '>{getDescription()} </p>
             {course.description.length > 100 && (
                 <button  className='text-blue-500 hover:underline mt-2'
                   onClick={ ()=> setShowFullDescription(!showFullDescription)

@@ -2,19 +2,20 @@ import React,{useEffect,useState} from 'react'
 import banner from '../assets/Images/banner-kba.png'
 import { Link, useParams,useLoaderData,useNavigate } from 'react-router-dom'
 import NotFount from './NotFound'
-
+import MainLayout from '../layouts/MainLayout';
+import getUserType from '../utils/Auth'
 
 const CoursePage = () => {
   const {id} =useParams()
-  const course=useState(null);
-  const loading =useState(true);
+  const course=useLoaderData();
+  const userType = getUserType();
   const naviagte=useNavigate();
 
   const deleteCourse= async ()=>{
     const confirmDelete =window.confirm('Are You sure you want to delete this course?')
     if(!confirmDelete) return;
 
-    const res=await fetch(`/courses/${id}`,{
+    const res=await fetch(`/api/courses/${id}`,{
       method :'DELETE',
       credentials:'include'
     })
@@ -23,13 +24,13 @@ const CoursePage = () => {
     }else{
       alert('error deleting course.')
     }}
-      if(loading){
-        return (
-          <MainLayout>
-            <NotFount />
-          </MainLayout>
-        )
-      }
+      // if(loading){
+      //   return (
+      //     <MainLayout>
+      //       <NotFount />
+      //     </MainLayout>
+      //   )
+      // }
   if(!course){
     return(
       <MainLayout>
@@ -105,10 +106,8 @@ const CoursePage = () => {
      <Link to={`/updatecourse/${course.courseId}`} >
       <button className="flex bg-blue-500 hover:bg-blue-600 text-white font-bold  rounded-full h-10 w-32 focus:outline-none focus:shadow-outline justify-center items-center">Edit Course</button>
       </Link>
-      <Link to={`/deletecourse/${course.courseId}`}>
-      <button className="flex bg-red-500 hover:bg-red-600 text-white font-bold  rounded-full h-10 w-32 focus:outline-none focus:shadow-outline  justify-center items-center">
+      <button className="flex bg-red-500 hover:bg-red-600 text-white font-bold  rounded-full h-10 w-32 focus:outline-none focus:shadow-outline  justify-center items-center" onClick ={deleteCourse}>
          Remove Course</button>
-      </Link>
      
       </div>}
   </div>
@@ -120,13 +119,14 @@ const CoursePage = () => {
 }
 
 const courseLoader=async({params})=>{
-  const res= await fetch(`/api/${params.id}`,{
-    credentials : 'include',
+  const res= await fetch(`/api/courses/${params.id}`,{
+    credentials :'include',
   });
   if(!res.ok){
     throw new Response('course not found',{status:404});
+
   }
-  return res.json()
+  return res.json();
 }
 
 export  { CoursePage as default, courseLoader}

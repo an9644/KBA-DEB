@@ -17,7 +17,7 @@ export const Navbar = () => {
             
         </div>
         <div className='flex justify-center md:justify-end items-center mt-2 md:mt-0 space-x-5 md:space-x-10'>
-            <Link to="/" className='ml-20'>Home</Link>
+            <Link to="/home" className='ml-20'>Home</Link>
             <Link to="/courses" className='ml-20'>Courses</Link>
             <Link to="/contact" className='ml-20'>Contact Us</Link>
            {userType==='admin' && <Link to="/addcourse" className='ml-20'>Add Course</Link>}

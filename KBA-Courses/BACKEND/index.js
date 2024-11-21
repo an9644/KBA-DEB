@@ -1,7 +1,7 @@
 import express,{json} from 'express'; // express file import cheyyth edkunva';
 import { adminRoute } from './ROUTES/adminroutes.js';
 import dotenv from 'dotenv';
-import cors from 'cors'
+// import cors from 'cors'
 import cookieParser  from 'cookie-parser'; //
 
 dotenv.config();

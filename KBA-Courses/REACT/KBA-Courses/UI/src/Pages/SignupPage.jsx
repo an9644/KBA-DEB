@@ -12,8 +12,10 @@ const SignupPage = () => {
   const signupSubmit =async (userDetails)=>{
     const res =await fetch(`/api/register`,{
       method:'POST',
-      headers :{'Content-Type':'application/json',},
-      body:JSON.stringify(userDetails),
+      headers: {
+        'Content-Type': 'application/json',
+    },
+          body:JSON.stringify(userDetails),
     })
     if(res.ok){
       toast.success('Signup Successfull');
@@ -26,7 +28,10 @@ const SignupPage = () => {
   const submitForm=(e)=>{
     e.preventDefault();
     const userDetails={
-      userName,password,email,userType
+      userName,
+      password,
+      email,
+      userType
     }
     signupSubmit(userDetails)
   }
@@ -39,7 +44,7 @@ const SignupPage = () => {
     <form onSubmit={submitForm}>
       {/* <!-- Name Field --> */}
       <div className="mb-4">
-        <label for="name" className="block text-gray-700 font-bold mb-2">Name:</label>
+        <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name:</label>
         <input
           type="text"
           id="name"
@@ -52,7 +57,7 @@ const SignupPage = () => {
       </div>
       {/* <!-- Email Field --> */}
       <div className="mb-4">
-        <label for="email" className="block text-gray-700 font-bold mb-2">Email:</label>
+        <label htmlFor="email" className="block text-gray-700 font-bold mb-2">Email:</label>
         <input
           type="email"
           id="email"
@@ -64,7 +69,7 @@ const SignupPage = () => {
       </div>
       {/* <!-- Password Field --> */}
       <div className="mb-4">
-        <label for="password" className="block text-gray-700 font-bold mb-2">Password:</label>
+        <label htmlFor="password" className="block text-gray-700 font-bold mb-2">Password:</label>
         <input
           type="password"
           id="password"
@@ -76,7 +81,7 @@ const SignupPage = () => {
       </div>
       {/* <!-- User Type Field --> */}
       <div className="mb-4">
-        <label for="userType" className="block text-gray-700 font-bold mb-2">User Type:</label>
+        <label htmlFor="userType" className="block text-gray-700 font-bold mb-2">User Type:</label>
         <select
           id="userType"
           name="userType"
@@ -100,7 +105,7 @@ const SignupPage = () => {
       {/* <!-- Login Link --> */}
       <p className="text-center">
         Already have an account?
-        <Link to="/" className="text-purple-700 hover:underline">Login</Link>
+        <Link to="/login" className="text-purple-700 hover:underline">Login</Link>
       </p>
     </form>
   </div>

@@ -1,0 +1,32 @@
+import React,{useState} from 'react'
+import { useEffect } from 'react';
+
+const ReservationGrid = ({isHome}) => {
+    const[reservations,setreservation]=useState([]);
+    const[loading,setLoading]=useState(true);
+    const reservationList= isHome?reservations.slice(0,3):reservations;
+  useEffect(()=>{
+    const fetchreservations=async()=>{
+      try{
+        const res=await fetch ('http://localhost:4500/getbooking');
+        const data=await res.json();
+        setreservation(data);
+
+      }
+      catch(error){
+        console.log('error fetching appointment : ',error)
+      }
+      finally{
+        setLoading(false);
+      }
+    }
+    fetchreservations();
+
+  },[]);
+  if(loading){
+
+  }
+  return 
+}
+
+export default ReservationGrid

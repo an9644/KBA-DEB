@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
                 console.log(bookid);
                 
             const response= await fetch(`http://127.0.0.1:3011/getbook?bookId=${bookid}`,{
-                    method:"PUT",
+                    method:"GET",
                     credentials:"include",
                 });
 
@@ -37,7 +38,8 @@
         
         async function updateBook(event){
             event.preventDefault();
-            const Bid = document.getElementById('bookid').value;
+            try {
+                const Bid = document.getElementById('bookid').value;
             const Newtitle = document.getElementById('newtitle').value
             const Newauthor = document.getElementById('newauthor').value;
             const Newgenre = document.getElementById('newgenre').value;
@@ -64,16 +66,19 @@
             })
 
             console.log(response);
-            const data = await response.json();
-            console.log(data);
-
             if (response.status == 200) {
+                const data = await response.json();
+            console.log(data);
            
            alert("Book updated Successfully");
            window.location.href = './learnmore.html';
            } else{
            alert("Book not found");
            }
+            } catch (error) {
+                console.error('Error updating book:', error);
+    // alert('Error updating book. Please try again.');
+            }
         async function logout(){
 
             try {

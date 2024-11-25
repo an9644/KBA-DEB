@@ -2,7 +2,8 @@ import express,{json} from 'express'
 import { adminRouter } from './ROUTER/adminrouter.js';
 import dotenv from 'dotenv'
 import cors from 'cors'
-import cookieParser  from 'cookie-parser'; //
+import cookieParser from 'cookie-parser';
+
 
 
 dotenv.config();
@@ -13,7 +14,7 @@ app.use(cors({
 
 }))
 app.use(json());
-app.use(cookieParser());
+app.use(cookieParser())
 app.use('/',adminRouter)
 
 const port =process.env.Port

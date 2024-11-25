@@ -93,19 +93,19 @@ if(responce.ok){
                 <p class="text-3xl font-bold mb-4 text-center text-purple-800 ">Add Book</p>
                     <div class="mb-4">
                         <label class=" text-purple-800 block  text-sm font-bold mb-2" > Title :</label>
-                        <input id="title" class="shadow appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Book Title">
+                        <input required id="title" class="shadow appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Book Title">
                     </div>
                     <div class="mb-4">
                         <label class=" text-purple-800 block  text-sm font-bold mb-2" > Author :</label>
-                        <input id="author" class="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline" id="author" type="text" placeholder="author name">
+                        <input required id="author" class="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline" id="author" type="text" placeholder="author name">
                     </div>
                     <div class="mb-4">
                         <label class="text-purple-800 block  text-sm font-bold mb-2" > Book ID :</label>
-                        <input id="bookid" class="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Book ID">
+                        <input required id="bookid" class="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Book ID">
                     </div>
                     <div class="mb-4">
                         <label class="text-purple-800 block  text-sm font-bold mb-2" > Genre :</label>
-                        <select id="genre" class="text-gray-700 shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline">
+                        <select required id="genre" class="text-gray-700 shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline">
                             <option value="Select" selected>Select</option>
                             <option value="Novel">Novel</option>
                             <option value="Fantasy">Fantasy</option>
@@ -118,12 +118,12 @@ if(responce.ok){
                     </div>
                     <div class="mb-4">
                         <label class=" text-purple-800 block  text-sm font-bold mb-2" for="Description" > Description </label>
-                        <textarea id="description" class=" shadow appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none  focus:shadow-outline" placeholder="Short Description...." cols="30" rows="10"></textarea>
+                        <textarea required id="description" class=" shadow appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none  focus:shadow-outline" placeholder="Short Description...." cols="30" rows="10"></textarea>
                     </div>
                     
                     <div class="mb-4">
-                        <label class=" text-purple-800 block  text-sm font-bold mb-2" > Price :</label>
-                        <input id="price" class="shadow appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Price">
+                        <label  class=" text-purple-800 block  text-sm font-bold mb-2" > Price :</label>
+                        <input required id="price" class="shadow appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Price">
                     </div>
                             <button 
                             class="ml-52 bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:shadow-md transition duration-200"

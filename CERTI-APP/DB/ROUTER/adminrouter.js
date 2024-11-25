@@ -144,9 +144,17 @@ adminrouter.get('/getcerti',async (req, res) => {
       res.status(500).json({ message: 'Internal server error' })     
     }
   })
+  adminrouter.get('/viewuser',authenticate,(req,res)=>{
+    try{
+    const user=req.Role;
+    res.json({user});}
+    catch{
+        res.status(404).json({message:'user not authorized'});
+    }
+})
 
 
-adminrouter.get('/logout',(req,res)=>{
+adminrouter.post('/logout',(req,res)=>{
     res.clearCookie('authtoken');
     res.send('logout successfully');
     console.log('logout successfully');
